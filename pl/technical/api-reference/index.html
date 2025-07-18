@@ -1,0 +1,2487 @@
+
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Przewidywanie wpływu publikacji AI za pomocą wczesnych sygnałów">
+      
+      
+        <meta name="author" content="Zespół AI Research Oracle">
+      
+      
+        <link rel="canonical" href="https://hretheum.github.io/ai_oracle/pl/technical/api-reference/">
+      
+      
+        <link rel="prev" href="../implementation-guide/">
+      
+      
+        <link rel="next" href="../algorithms/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Dokumentacja API - AI Research Oracle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#szczegoowy-plan-integracji-api-dla-systemu-ai-research-oracle" class="md-skip">
+          Przejdź do treści
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="AI Research Oracle" class="md-header__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Oracle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dokumentacja API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Przełącz na tryb ciemny"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb ciemny" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Przełącz na tryb jasny"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb jasny" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Wybierz język">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/pl/" hreflang="pl" class="md-select__link">
+              Polski
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Szukaj">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicjowanie wyszukiwania
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Zakładki" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Strona główna
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hretheum.github.io/ai_oracle/" class="md-tabs__link">
+        
+  
+    
+  
+  🌐 English
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/business-plan/" class="md-tabs__link">
+          
+  
+  Strategia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../implementation-guide/" class="md-tabs__link">
+          
+  
+  Dokumentacja techniczna
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operations/roadmap/" class="md-tabs__link">
+          
+  
+  Operacje
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/case-study-example/" class="md-tabs__link">
+          
+  
+  Zasoby
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Nawigacja" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Research Oracle" class="md-nav__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AI Research Oracle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strona główna
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hretheum.github.io/ai_oracle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌐 English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Strategia
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strategia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-plan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan biznesowy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pivot-story/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historia pivotu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Dokumentacja techniczna
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dokumentacja techniczna
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementacja
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Dokumentacja API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Dokumentacja API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#przeglad-api-dla-predykcji-wpywu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Przegląd: API dla predykcji wpływu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-arxiv-api-zrodo-artykuow-fundament" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ArXiv API - Źródło artykułów (FUNDAMENT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ArXiv API - Źródło artykułów (FUNDAMENT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-w-makecom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja w Make.com
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametry-zapytania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parametry zapytania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsowanie-xml-w-makecom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parsowanie XML w Make.com:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-semantic-scholar-api-metryki-autorow-krytyczne-dla-wczesnych-sygnaow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Semantic Scholar API - Metryki autorów (KRYTYCZNE dla wczesnych sygnałów)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Semantic Scholar API - Metryki autorów (KRYTYCZNE dla wczesnych sygnałów)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-wyszukiwanie-autora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja - Wyszukiwanie autora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametry-zapytania_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parametry zapytania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapowanie-danych" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapowanie danych:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-twitter-api-v2-sledzenie-buzzu-spoecznosciowego-nowy-priorytet" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Twitter API v2 - Śledzenie buzzu społecznościowego (NOWY PRIORYTET!)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Twitter API v2 - Śledzenie buzzu społecznościowego (NOWY PRIORYTET!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametry-wyszukiwania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parametry wyszukiwania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrakcja-metryk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekstrakcja metryk:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-github-api-sledzenie-implementacji-wysoka-wartosc-sygnau" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GitHub API - Śledzenie implementacji (WYSOKA WARTOŚĆ SYGNAŁU!)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. GitHub API - Śledzenie implementacji (WYSOKA WARTOŚĆ SYGNAŁU!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wyszukiwanie-implementacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wyszukiwanie implementacji
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja API:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrakcja-sygnau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekstrakcja sygnału:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-altmetric-api-buzz-akademicki-opcjonalne-ale-wartosciowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Altmetric API - Buzz akademicki (OPCJONALNE ale WARTOŚCIOWE)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Altmetric API - Buzz akademicki (OPCJONALNE ale WARTOŚCIOWE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wartosciowe-metryki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wartościowe metryki:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crossref-event-data-darmowa-alternatywa-dla-altmetric" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Crossref Event Data - Darmowa alternatywa dla Altmetric
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crossref Event Data - Darmowa alternatywa dla Altmetric">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zapytanie-o-artyku-arxiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zapytanie o artykuł ArXiv:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsowanie-wydarzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parsowanie wydarzeń:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reddit-api-sygnay-spoecznosci-akademickiej" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Reddit API - Sygnały społeczności akademickiej
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Reddit API - Sygnały społeczności akademickiej">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja OAuth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyszukaj-rmachinelearning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wyszukaj r/MachineLearning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrakcja-sygnau_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekstrakcja sygnału:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-algorytm-agregacji-wczesnych-sygnaow" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Algorytm agregacji wczesnych sygnałów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Algorytm agregacji wczesnych sygnałów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gowna-funkcja-punktacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Główna funkcja punktacji
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-integracja-api-predykcji-ml" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Integracja API predykcji ML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Integracja API predykcji ML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#niestandardowy-endpoint-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Niestandardowy endpoint API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tresc-zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Treść żądania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odpowiedz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Odpowiedź:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-schemat-airtable-zaktualizowany-dla-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Schemat Airtable - zaktualizowany dla Oracle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Schemat Airtable - zaktualizowany dla Oracle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabela-papers-nowe-pola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabela Papers - nowe pola:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabela-predictions-nowa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabela Predictions (NOWA):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-limitowanie-i-optymalizacja" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Limitowanie i optymalizacja
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Limitowanie i optymalizacja">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zarzadzanie-limitami-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zarządzanie limitami API:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-optymalizacja-kosztow" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Optymalizacja kosztów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Optymalizacja kosztów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miesieczna-alokacja-budzetu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miesięczna alokacja budżetu:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optymalizacja-operacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optymalizacja operacji:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-szybki-priorytet-implementacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Szybki priorytet implementacji
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Szybki priorytet implementacji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tydzien-1-gowne-wczesne-sygnay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tydzień 1 - Główne wczesne sygnały:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tydzien-2-rozszerzone-sygnay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tydzień 2 - Rozszerzone sygnały:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tydzien-3-automatyzacja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tydzień 3 - Automatyzacja:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorytmy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-training-guide.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trening ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Operacje
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Operacje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapa drogowa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metryki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/budget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Budżet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/newsletter-strategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Newsletter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Zasoby
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Zasoby
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/case-study-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Studia przypadków
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/platform_comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platformy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GAMMA_PITCH_DECK_PROMPT.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pitch Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#przeglad-api-dla-predykcji-wpywu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Przegląd: API dla predykcji wpływu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-arxiv-api-zrodo-artykuow-fundament" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ArXiv API - Źródło artykułów (FUNDAMENT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ArXiv API - Źródło artykułów (FUNDAMENT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-w-makecom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja w Make.com
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametry-zapytania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parametry zapytania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsowanie-xml-w-makecom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parsowanie XML w Make.com:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-semantic-scholar-api-metryki-autorow-krytyczne-dla-wczesnych-sygnaow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Semantic Scholar API - Metryki autorów (KRYTYCZNE dla wczesnych sygnałów)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Semantic Scholar API - Metryki autorów (KRYTYCZNE dla wczesnych sygnałów)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-wyszukiwanie-autora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja - Wyszukiwanie autora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametry-zapytania_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parametry zapytania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapowanie-danych" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapowanie danych:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-twitter-api-v2-sledzenie-buzzu-spoecznosciowego-nowy-priorytet" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Twitter API v2 - Śledzenie buzzu społecznościowego (NOWY PRIORYTET!)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Twitter API v2 - Śledzenie buzzu społecznościowego (NOWY PRIORYTET!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametry-wyszukiwania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parametry wyszukiwania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrakcja-metryk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekstrakcja metryk:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-github-api-sledzenie-implementacji-wysoka-wartosc-sygnau" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GitHub API - Śledzenie implementacji (WYSOKA WARTOŚĆ SYGNAŁU!)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. GitHub API - Śledzenie implementacji (WYSOKA WARTOŚĆ SYGNAŁU!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wyszukiwanie-implementacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wyszukiwanie implementacji
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja API:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrakcja-sygnau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekstrakcja sygnału:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-altmetric-api-buzz-akademicki-opcjonalne-ale-wartosciowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Altmetric API - Buzz akademicki (OPCJONALNE ale WARTOŚCIOWE)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Altmetric API - Buzz akademicki (OPCJONALNE ale WARTOŚCIOWE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wartosciowe-metryki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wartościowe metryki:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crossref-event-data-darmowa-alternatywa-dla-altmetric" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Crossref Event Data - Darmowa alternatywa dla Altmetric
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crossref Event Data - Darmowa alternatywa dla Altmetric">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zapytanie-o-artyku-arxiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zapytanie o artykuł ArXiv:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsowanie-wydarzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parsowanie wydarzeń:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reddit-api-sygnay-spoecznosci-akademickiej" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Reddit API - Sygnały społeczności akademickiej
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Reddit API - Sygnały społeczności akademickiej">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfiguracja-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja OAuth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyszukaj-rmachinelearning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wyszukaj r/MachineLearning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrakcja-sygnau_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekstrakcja sygnału:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-algorytm-agregacji-wczesnych-sygnaow" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Algorytm agregacji wczesnych sygnałów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Algorytm agregacji wczesnych sygnałów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gowna-funkcja-punktacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Główna funkcja punktacji
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-integracja-api-predykcji-ml" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Integracja API predykcji ML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Integracja API predykcji ML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#niestandardowy-endpoint-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Niestandardowy endpoint API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tresc-zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Treść żądania:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odpowiedz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Odpowiedź:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-schemat-airtable-zaktualizowany-dla-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Schemat Airtable - zaktualizowany dla Oracle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Schemat Airtable - zaktualizowany dla Oracle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabela-papers-nowe-pola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabela Papers - nowe pola:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabela-predictions-nowa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabela Predictions (NOWA):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-limitowanie-i-optymalizacja" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Limitowanie i optymalizacja
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Limitowanie i optymalizacja">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zarzadzanie-limitami-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zarządzanie limitami API:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-optymalizacja-kosztow" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Optymalizacja kosztów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Optymalizacja kosztów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miesieczna-alokacja-budzetu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miesięczna alokacja budżetu:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optymalizacja-operacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optymalizacja operacji:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-szybki-priorytet-implementacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Szybki priorytet implementacji
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Szybki priorytet implementacji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tydzien-1-gowne-wczesne-sygnay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tydzień 1 - Główne wczesne sygnały:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tydzien-2-rozszerzone-sygnay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tydzień 2 - Rozszerzone sygnały:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tydzien-3-automatyzacja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tydzień 3 - Automatyzacja:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="szczegoowy-plan-integracji-api-dla-systemu-ai-research-oracle">Szczegółowy plan integracji API dla systemu AI Research Oracle 🔮</h1>
+<h2 id="przeglad-api-dla-predykcji-wpywu">Przegląd: API dla predykcji wpływu</h2>
+<p>System Oracle potrzebuje API do zbierania <strong>wczesnych sygnałów</strong> (pierwsze 7 dni) które pozwolą przewidzieć przyszłe cytowania. Priorytet: szybkie sygnały społeczne i śledzenie implementacji.</p>
+<h2 id="1-arxiv-api-zrodo-artykuow-fundament">1. ArXiv API - Źródło artykułów (FUNDAMENT)</h2>
+<h3 id="konfiguracja-w-makecom">Konfiguracja w Make.com</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Moduł: HTTP Request
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>URL: http://export.arxiv.org/api/query
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Metoda: GET
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Nagłówki: Nie wymagane
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Limit: 1 żądanie na 3 sekundy
+</code></pre></div>
+<h3 id="parametry-zapytania">Parametry zapytania:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;search_query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cat:cs.AI OR cat:cs.LG OR cat:cs.CL OR cat:cs.CV&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;max_results&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;sortBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;submittedDate&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;sortOrder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;descending&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="parsowanie-xml-w-makecom">Parsowanie XML w Make.com:</h3>
+<ol>
+<li><strong>Moduł XML Parser</strong></li>
+<li>Wejście: HTTP Response Body</li>
+<li>Element główny: <code>feed</code></li>
+<li>
+<p>Wyodrębnij: tablicę <code>entry[]</code></p>
+</li>
+<li>
+<p><strong>Moduł Iterator</strong></p>
+</li>
+<li>Tablica: <code>entry[]</code></li>
+<li>
+<p>Mapuj każdy artykuł</p>
+</li>
+<li>
+<p><strong>Mapowanie danych</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>title: {{entry.title}}
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>arxiv_id: {{split(entry.id, &quot;/&quot;)[last]}}
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>authors: {{map(entry.author; &quot;name&quot;)}}
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>abstract: {{entry.summary}}
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>pdf_url: {{filter(entry.link; title = &quot;pdf&quot;)[0].href}}
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>published: {{entry.published}}
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="2-semantic-scholar-api-metryki-autorow-krytyczne-dla-wczesnych-sygnaow">2. Semantic Scholar API - Metryki autorów (KRYTYCZNE dla wczesnych sygnałów)</h2>
+<h3 id="konfiguracja-wyszukiwanie-autora">Konfiguracja - Wyszukiwanie autora</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Moduł: HTTP Request
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>URL: https://api.semanticscholar.org/graph/v1/author/search
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Metoda: GET
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Nagłówki: Brak (dostępny darmowy poziom)
+</code></pre></div>
+<h3 id="parametry-zapytania_1">Parametry zapytania:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>query={author_name}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>fields=authorId,name,hIndex,citationCount,paperCount
+</code></pre></div>
+<h3 id="mapowanie-danych">Mapowanie danych:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Wyodrębnij maksymalny h-index spośród wszystkich autorów</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">map</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">author</span><span class="p">;</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">)}};</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hIndexes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">author</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">authors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchAuthor</span><span class="p">(</span><span class="nx">author</span><span class="p">);</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="nx">hIndexes</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">hIndex</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">maxHIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">hIndexes</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="3-twitter-api-v2-sledzenie-buzzu-spoecznosciowego-nowy-priorytet">3. Twitter API v2 - Śledzenie buzzu społecznościowego (NOWY PRIORYTET!)</h2>
+<h3 id="konfiguracja">Konfiguracja</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Moduł: HTTP Request
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>URL: https://api.twitter.com/2/tweets/search/recent
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Metoda: GET
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Nagłówki: 
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  Authorization: Bearer {{twitter_bearer_token}}
+</code></pre></div>
+<h3 id="parametry-wyszukiwania">Parametry wyszukiwania:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="s2">&quot;query&quot;</span><span class="o">:</span><span class="w"> </span><span class="sb">`(&quot;</span><span class="si">${</span><span class="nx">arxiv_id</span><span class="si">}</span><span class="sb">&quot; OR &quot;</span><span class="si">${</span><span class="nx">paper_title</span><span class="si">}</span><span class="sb">&quot;) -is:retweet`</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="s2">&quot;max_results&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="s2">&quot;tweet.fields&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;public_metrics,author_id,created_at&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="s2">&quot;expansions&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;author_id&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="ekstrakcja-metryk">Ekstrakcja metryk:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// Oblicz zaangażowanie w ciągu 24h</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tweets24h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tweets</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">created_at</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">24</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">1000</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">);</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">metrics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nx">mentions_24h</span><span class="o">:</span><span class="w"> </span><span class="nx">tweets24h</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nx">total_retweets</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">tweets24h</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">public_metrics</span><span class="p">.</span><span class="nx">retweet_count</span><span class="p">)),</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nx">total_likes</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">tweets24h</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">public_metrics</span><span class="p">.</span><span class="nx">like_count</span><span class="p">)),</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nx">unique_authors</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">tweets24h</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">author_id</span><span class="p">)).</span><span class="nx">size</span><span class="p">,</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="nx">has_influencer</span><span class="o">:</span><span class="w"> </span><span class="nx">checkInfluencers</span><span class="p">(</span><span class="nx">tweets24h</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">author_id</span><span class="p">))</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="p">};</span>
+</code></pre></div>
+<h2 id="4-github-api-sledzenie-implementacji-wysoka-wartosc-sygnau">4. GitHub API - Śledzenie implementacji (WYSOKA WARTOŚĆ SYGNAŁU!)</h2>
+<h3 id="wyszukiwanie-implementacji">Wyszukiwanie implementacji</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Moduł: GitHub - Search Repositories
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Zapytanie: &quot;{paper_title}&quot; OR &quot;{arxiv_id}&quot; language:python created:&gt;{published_date}
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Sortuj: stars
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Kolejność: desc
+</code></pre></div>
+<h3 id="konfiguracja-api">Konfiguracja API:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>URL: https://api.github.com/search/repositories
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Nagłówki: 
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  Authorization: Bearer {{github_token}}
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  Accept: application/vnd.github.v3+json
+</code></pre></div>
+<h3 id="ekstrakcja-sygnau">Ekstrakcja sygnału:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// Sprawdź wczesne implementacje</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">implementations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchResults</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">repo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">daysSinceCreated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">repo</span><span class="p">.</span><span class="nx">created_at</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1000</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">24</span><span class="p">);</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">daysSinceCreated</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">});</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">githubSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nx">has_implementation</span><span class="o">:</span><span class="w"> </span><span class="nx">implementations</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="nx">total_stars_7d</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">implementations</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">stargazers_count</span><span class="p">)),</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="nx">implementation_count</span><span class="o">:</span><span class="w"> </span><span class="nx">implementations</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span><span class="nx">fastest_implementation_hours</span><span class="o">:</span><span class="w"> </span><span class="nx">min</span><span class="p">(</span><span class="nx">implementations</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">created_at</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="nx">published</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1000</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">60</span><span class="p">)</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="p">))</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="p">};</span>
+</code></pre></div>
+<h2 id="5-altmetric-api-buzz-akademicki-opcjonalne-ale-wartosciowe">5. Altmetric API - Buzz akademicki (OPCJONALNE ale WARTOŚCIOWE)</h2>
+<h3 id="konfiguracja_1">Konfiguracja</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Moduł: HTTP Request
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>URL: https://api.altmetric.com/v1/arxiv/{arxiv_id}
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Metoda: GET
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Nagłówki:
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  Authorization: Bearer {{altmetric_key}}
+</code></pre></div>
+<h3 id="wartosciowe-metryki">Wartościowe metryki:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="s2">&quot;mendeley_readers_count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w">  </span><span class="c1">// Silny predyktor!</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="s2">&quot;twitter_mentions&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="s2">&quot;news_mentions&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="s2">&quot;blog_mentions&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="s2">&quot;policy_mentions&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="s2">&quot;score&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">67.5</span><span class="w">  </span><span class="c1">// Wynik uwagi Altmetric</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="6-crossref-event-data-darmowa-alternatywa-dla-altmetric">6. Crossref Event Data - Darmowa alternatywa dla Altmetric</h2>
+<h3 id="konfiguracja_2">Konfiguracja</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>URL: https://api.eventdata.crossref.org/v1/events
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Metoda: GET
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Brak autoryzacji wymaganej!
+</code></pre></div>
+<h3 id="zapytanie-o-artyku-arxiv">Zapytanie o artykuł ArXiv:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>obj-id=https://arxiv.org/abs/{arxiv_id}
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>from-collected-date={published_date}
+</code></pre></div>
+<h3 id="parsowanie-wydarzen">Parsowanie wydarzeń:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">events</span><span class="p">;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">eventCounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nx">twitter</span><span class="o">:</span><span class="w"> </span><span class="nx">events</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">source_id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;twitter&quot;</span><span class="p">).</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="nx">reddit</span><span class="o">:</span><span class="w"> </span><span class="nx">events</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">source_id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;reddit&quot;</span><span class="p">).</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nx">wikipedia</span><span class="o">:</span><span class="w"> </span><span class="nx">events</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">source_id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;wikipedia&quot;</span><span class="p">).</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="nx">news</span><span class="o">:</span><span class="w"> </span><span class="nx">events</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">source_id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;newsfeed&quot;</span><span class="p">).</span><span class="nx">length</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">};</span>
+</code></pre></div>
+<h2 id="7-reddit-api-sygnay-spoecznosci-akademickiej">7. Reddit API - Sygnały społeczności akademickiej</h2>
+<h3 id="konfiguracja-oauth">Konfiguracja OAuth</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// Pobierz token dostępu</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://www.reddit.com/api/v1/access_token&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Basic &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">btoa</span><span class="p">(</span><span class="nx">client_id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">client_secret</span><span class="p">),</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;grant_type=client_credentials&#39;</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">});</span>
+</code></pre></div>
+<h3 id="wyszukaj-rmachinelearning">Wyszukaj r/MachineLearning</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>URL: https://oauth.reddit.com/r/MachineLearning/search
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Nagłówki:
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  Authorization: Bearer {{reddit_token}}
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>  User-Agent: AIResearchOracle/1.0
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>Parametry:
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>  q: {arxiv_id} OR {paper_title}
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>  restrict_sr: true
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>  sort: hot
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>  limit: 25
+</code></pre></div>
+<h3 id="ekstrakcja-sygnau_1">Ekstrakcja sygnału:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">redditSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nx">posts_count</span><span class="o">:</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="nx">total_score</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">score</span><span class="p">)),</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="nx">total_comments</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">num_comments</span><span class="p">)),</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="nx">has_discussion</span><span class="o">:</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">num_comments</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">),</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="nx">highest_score</span><span class="o">:</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">score</span><span class="p">))</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">};</span>
+</code></pre></div>
+<h2 id="8-algorytm-agregacji-wczesnych-sygnaow">8. Algorytm agregacji wczesnych sygnałów</h2>
+<h3 id="gowna-funkcja-punktacji">Główna funkcja punktacji</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calculateEarlySignalsScore</span><span class="p">(</span><span class="nx">paper</span><span class="p">,</span><span class="w"> </span><span class="nx">signals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span><span class="c1">// SYGNAŁY AUTORÓW (40 punktów max)</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">authorScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nx">hIndex</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">maxAuthorHIndex</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">),</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nx">topInstitution</span><span class="o">:</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">hasTopInstitution</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nx">trackRecord</span><span class="o">:</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">authorPrevBreakthroughs</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="nx">industry</span><span class="o">:</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">hasIndustryAuthor</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">  </span><span class="p">};</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">authorScore</span><span class="p">));</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">  </span><span class="c1">// BUZZ SPOŁECZNOŚCIOWY (30 punktów max)</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">socialScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="nx">twitterMentions</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">twitter</span><span class="p">.</span><span class="nx">mentions_24h</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">),</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="nx">githubStars</span><span class="o">:</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">has_implementation</span><span class="w"> </span><span class="o">?</span><span class="w"> </span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">                 </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">total_stars_7d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">    </span><span class="nx">redditScore</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">reddit</span><span class="p">.</span><span class="nx">highest_score</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">),</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">    </span><span class="nx">mendeleyReaders</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">altmetric</span><span class="p">.</span><span class="nx">mendeley_readers</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">),</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">    </span><span class="nx">newsPickup</span><span class="o">:</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">altmetric</span><span class="p">.</span><span class="nx">news_mentions</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">  </span><span class="p">};</span>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">socialScore</span><span class="p">));</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">  </span><span class="c1">// SYGNAŁY TREŚCI (20 punktów max)</span>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">contentScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">    </span><span class="nx">hasCode</span><span class="o">:</span><span class="w"> </span><span class="nx">paper</span><span class="p">.</span><span class="kr">abstract</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;github.com&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">    </span><span class="nx">hasDataset</span><span class="o">:</span><span class="w"> </span><span class="nx">paper</span><span class="p">.</span><span class="kr">abstract</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;dataset&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="w">    </span><span class="nx">claimsSOTA</span><span class="o">:</span><span class="w"> </span><span class="sr">/state-of-the-art|sota|outperform/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="kr">abstract</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">7</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="w">    </span><span class="nx">novelMethod</span><span class="o">:</span><span class="w"> </span><span class="sr">/novel|first|new approach|propose/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="kr">abstract</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="w">  </span><span class="p">};</span>
+<a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">contentScore</span><span class="p">));</span>
+<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="w">  </span><span class="c1">// DYNAMIKA TEMATU (10 punktów max)</span>
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">topicScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a><span class="w">    </span><span class="nx">trendingKeywords</span><span class="o">:</span><span class="w"> </span><span class="nx">calculateKeywordTrend</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="nx">title</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="w">    </span><span class="nx">emergingField</span><span class="o">:</span><span class="w"> </span><span class="nx">isEmergingField</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="nx">categories</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="w">  </span><span class="p">};</span>
+<a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">topicScore</span><span class="p">));</span>
+<a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>
+<a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="w">    </span><span class="nx">total</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">),</span>
+<a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="w">    </span><span class="nx">breakdown</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="w">      </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">authorScore</span><span class="p">)),</span>
+<a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="w">      </span><span class="nx">social</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">socialScore</span><span class="p">)),</span>
+<a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">contentScore</span><span class="p">)),</span>
+<a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a><span class="w">      </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">topicScore</span><span class="p">))</span>
+<a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a><span class="w">    </span><span class="nx">signals</span><span class="o">:</span><span class="w"> </span><span class="nx">signals</span>
+<a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a><span class="w">  </span><span class="p">};</span>
+<a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="9-integracja-api-predykcji-ml">9. Integracja API predykcji ML</h2>
+<h3 id="niestandardowy-endpoint-api">Niestandardowy endpoint API</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>URL: https://your-oracle-api.herokuapp.com/predict
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Metoda: POST
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Nagłówki:
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  Content-Type: application/json
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>  X-API-Key: {{oracle_api_key}}
+</code></pre></div>
+<h3 id="tresc-zadania">Treść żądania:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;paper&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;arxiv_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024.12345&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nt">&quot;abstract&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">  </span><span class="nt">&quot;early_signals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="nt">&quot;author_metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">    </span><span class="nt">&quot;social_metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">    </span><span class="nt">&quot;content_features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">  </span><span class="nt">&quot;model_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v2.1&quot;</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="odpowiedz">Odpowiedź:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">&quot;predictions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">&quot;citations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">      </span><span class="nt">&quot;1_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">      </span><span class="nt">&quot;3_years&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">156</span><span class="p">,</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">      </span><span class="nt">&quot;5_years&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">412</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nt">&quot;impact&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">      </span><span class="nt">&quot;percentile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high_impact&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">      </span><span class="nt">&quot;breakthrough_probability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.82</span><span class="p">,</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">      </span><span class="nt">&quot;factors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">        </span><span class="s2">&quot;Silny track record autora&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">        </span><span class="s2">&quot;Wczesna adopcja GitHub&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">        </span><span class="s2">&quot;Nowatorska metodologia&quot;</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">      </span><span class="p">]</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">  </span><span class="nt">&quot;similar_papers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="w">  </span><span class="nt">&quot;recommended_actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="w">    </span><span class="s2">&quot;Monitoruj cotygodniowo&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="w">    </span><span class="s2">&quot;Oznacz do newslettera VC&quot;</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="10-schemat-airtable-zaktualizowany-dla-oracle">10. Schemat Airtable - zaktualizowany dla Oracle</h2>
+<h3 id="tabela-papers-nowe-pola">Tabela Papers - nowe pola:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="c1">// Istniejące pola...</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span><span class="c1">// Pola wczesnych sygnałów</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span><span class="s2">&quot;early_signals_score&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">(</span><span class="mf">0</span><span class="o">-</span><span class="mf">100</span><span class="p">),</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="s2">&quot;author_max_h_index&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">  </span><span class="s2">&quot;has_top_institution&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">checkbox</span><span class="p">,</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="s2">&quot;has_industry_author&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">checkbox</span><span class="p">,</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">  </span><span class="c1">// Sygnały społecznościowe</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">  </span><span class="s2">&quot;twitter_mentions_24h&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">  </span><span class="s2">&quot;twitter_mentions_7d&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">  </span><span class="s2">&quot;github_repos_7d&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">  </span><span class="s2">&quot;github_stars_7d&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="w">  </span><span class="s2">&quot;reddit_score&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">  </span><span class="s2">&quot;mendeley_readers&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">  </span><span class="c1">// Predykcje</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="w">  </span><span class="s2">&quot;needs_prediction&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">formula</span><span class="p">(</span><span class="s2">&quot;early_signals_score &gt; 60&quot;</span><span class="p">),</span>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">  </span><span class="s2">&quot;predicted&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">checkbox</span><span class="p">,</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">  </span><span class="s2">&quot;predicted_citations_1yr&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">  </span><span class="s2">&quot;predicted_citations_3yr&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="w">  </span><span class="s2">&quot;prediction_confidence&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">(</span><span class="mf">0</span><span class="o">-</span><span class="mf">1</span><span class="p">),</span>
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="w">  </span><span class="s2">&quot;breakthrough_probability&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">(</span><span class="mf">0</span><span class="o">-</span><span class="mf">1</span><span class="p">),</span>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">  </span><span class="s2">&quot;prediction_date&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">date</span><span class="p">,</span>
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="w">  </span><span class="c1">// Śledzenie</span>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">  </span><span class="s2">&quot;actual_citations_1yr&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">  </span><span class="s2">&quot;actual_citations_3yr&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="w">  </span><span class="s2">&quot;prediction_accuracy&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">formula</span><span class="p">,</span>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="w">  </span><span class="s2">&quot;checked_date&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">date</span>
+<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="tabela-predictions-nowa">Tabela Predictions (NOWA):</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="s2">&quot;prediction_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">autonumber</span><span class="p">,</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="s2">&quot;paper_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">link</span><span class="p">(</span><span class="nx">Papers</span><span class="p">),</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="s2">&quot;prediction_date&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">date</span><span class="p">,</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span><span class="s2">&quot;model_version&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span><span class="s2">&quot;features_snapshot&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">long_text</span><span class="p">(</span><span class="nb">JSON</span><span class="p">),</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">  </span><span class="s2">&quot;predicted_values&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">long_text</span><span class="p">(</span><span class="nb">JSON</span><span class="p">),</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">  </span><span class="s2">&quot;confidence_score&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">  </span><span class="s2">&quot;public_url&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">  </span><span class="s2">&quot;social_posts&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">attachments</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="11-limitowanie-i-optymalizacja">11. Limitowanie i optymalizacja</h2>
+<h3 id="zarzadzanie-limitami-api">Zarządzanie limitami API:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rateLimits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="nx">arxiv</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">requests</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">per</span><span class="o">:</span><span class="w"> </span><span class="mf">3000</span><span class="w"> </span><span class="p">},</span><span class="w">      </span><span class="c1">// 1 na 3s</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span><span class="nx">twitter</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">requests</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="nx">per</span><span class="o">:</span><span class="w"> </span><span class="mf">900000</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 300 na 15min</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">  </span><span class="nx">github</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">requests</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">per</span><span class="o">:</span><span class="w"> </span><span class="mf">60000</span><span class="w"> </span><span class="p">},</span><span class="w">    </span><span class="c1">// 30 na minutę</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">  </span><span class="nx">reddit</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">requests</span><span class="o">:</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="nx">per</span><span class="o">:</span><span class="w"> </span><span class="mf">60000</span><span class="w"> </span><span class="p">},</span><span class="w">    </span><span class="c1">// 60 na minutę</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">  </span><span class="nx">altmetric</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">requests</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="nx">per</span><span class="o">:</span><span class="w"> </span><span class="mf">86400000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// 1000 na dzień</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="p">};</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="c1">// Implementuj wykładnicze wycofanie</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">rateLimitedRequest</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span><span class="w"> </span><span class="nx">requestFn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">limiter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rateLimiters</span><span class="p">[</span><span class="nx">api</span><span class="p">];</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">limiter</span><span class="p">.</span><span class="nx">removeTokens</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">requestFn</span><span class="p">();</span>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">429</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">sleep</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">attempt</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">rateLimitedRequest</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span><span class="w"> </span><span class="nx">requestFn</span><span class="p">);</span>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span>
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="12-optymalizacja-kosztow">12. Optymalizacja kosztów</h2>
+<h3 id="miesieczna-alokacja-budzetu">Miesięczna alokacja budżetu:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Twitter API Basic: $100 (niezbędne dla sygnałów społecznościowych)
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>Make.com Teams: $29 (zwiększone operacje)
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Hosting ML: $20 (Heroku/Railway)
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>Altmetric: $50 (opcjonalne ale wartościowe)
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>GitHub: $0 (darmowy poziom wystarczający)
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>Reddit: $0 (darmowy poziom)
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>ArXiv: $0 (zawsze darmowe)
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>Semantic Scholar: $0 (darmowy poziom)
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>Razem: $199/miesiąc (poniżej celu $200)
+</code></pre></div>
+<h3 id="optymalizacja-operacji">Optymalizacja operacji:</h3>
+<ol>
+<li><strong>Przetwarzanie wsadowe</strong>: Grupuj artykuły według daty publikacji</li>
+<li><strong>Warunkowe API</strong>: Wywołuj drogie API tylko dla artykułów o wysokim wyniku</li>
+<li><strong>Cachowanie</strong>: Przechowuj metryki autorów przez 30 dni</li>
+<li><strong>Inteligentne planowanie</strong>: Rozłóż wywołania API przez cały dzień</li>
+</ol>
+<h2 id="13-szybki-priorytet-implementacji">13. Szybki priorytet implementacji</h2>
+<h3 id="tydzien-1-gowne-wczesne-sygnay">Tydzień 1 - Główne wczesne sygnały:</h3>
+<ol>
+<li>Crawler ArXiv ✓</li>
+<li>Wyszukiwanie h-index autora ✓</li>
+<li>Licznik wzmianek Twitter ✓</li>
+<li>Podstawowy algorytm punktacji ✓</li>
+</ol>
+<h3 id="tydzien-2-rozszerzone-sygnay">Tydzień 2 - Rozszerzone sygnały:</h3>
+<ol>
+<li>Tracker implementacji GitHub</li>
+<li>Monitor dyskusji Reddit</li>
+<li>Integracja Altmetric/Crossref</li>
+<li>API predykcji ML</li>
+</ol>
+<h3 id="tydzien-3-automatyzacja">Tydzień 3 - Automatyzacja:</h3>
+<ol>
+<li>Pełny pipeline Make.com</li>
+<li>Automatyzacja Airtable</li>
+<li>Generowanie treści</li>
+<li>Publiczny tracker</li>
+</ol>
+<hr />
+<p><em>Pamiętaj: Celem jest przewidywanie wpływu, nie czekanie na niego. Każda integracja API powinna przyczyniać się do wykrywania wczesnych sygnałów w ciągu pierwszych 7 dni od publikacji.</em> 🔮</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ostatnia aktualizacja">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Utworzony">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Powrót do góry
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hretheum/ai_oracle" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/AIResearchOracle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

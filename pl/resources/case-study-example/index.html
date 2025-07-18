@@ -1,0 +1,2532 @@
+
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Przewidywanie wpływu publikacji AI za pomocą wczesnych sygnałów">
+      
+      
+        <meta name="author" content="Zespół AI Research Oracle">
+      
+      
+        <link rel="canonical" href="https://hretheum.github.io/ai_oracle/pl/resources/case-study-example/">
+      
+      
+        <link rel="prev" href="../../operations/newsletter-strategy/">
+      
+      
+        <link rel="next" href="../platform_comparison/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Studia przypadków - AI Research Oracle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#studium-przypadku-automatyzacji-wzrostu-od-0-do-1000-w-6-tygodni" class="md-skip">
+          Przejdź do treści
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="AI Research Oracle" class="md-header__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Oracle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Studia przypadków
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Przełącz na tryb ciemny"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb ciemny" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Przełącz na tryb jasny"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb jasny" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Wybierz język">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/pl/" hreflang="pl" class="md-select__link">
+              Polski
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Szukaj">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicjowanie wyszukiwania
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Zakładki" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Strona główna
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hretheum.github.io/ai_oracle/" class="md-tabs__link">
+        
+  
+    
+  
+  🌐 English
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/business-plan/" class="md-tabs__link">
+          
+  
+  Strategia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical/implementation-guide/" class="md-tabs__link">
+          
+  
+  Dokumentacja techniczna
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operations/roadmap/" class="md-tabs__link">
+          
+  
+  Operacje
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Zasoby
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Nawigacja" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Research Oracle" class="md-nav__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AI Research Oracle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strona główna
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hretheum.github.io/ai_oracle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌐 English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Strategia
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strategia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-plan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan biznesowy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pivot-story/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historia pivotu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Dokumentacja techniczna
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dokumentacja techniczna
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/implementation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementacja
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dokumentacja API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorytmy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/ml-training-guide.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trening ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Operacje
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Operacje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapa drogowa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metryki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/budget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Budżet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/newsletter-strategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Newsletter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Zasoby
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Zasoby
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Studia przypadków
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Studia przypadków
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jak-zbudowac-pipeline-automatyzacji-dla-personal-brandingu-w-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jak zbudować pipeline automatyzacji dla personal brandingu w AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jak zbudować pipeline automatyzacji dla personal brandingu w AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wprowadzenie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wprowadzenie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlaczego-automatyzacja-ale-z-gowa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dlaczego automatyzacja, ale z głową?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-1-content-amplification-engine-twoj-content-na-sterydach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 1: Content Amplification Engine — Twój Content na Sterydach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 1: Content Amplification Engine — Twój Content na Sterydach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#historia-ktora-zmienia-wszystko" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historia, która zmieniła wszystko
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jak-dziaa-content-amplification-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jak działa Content Amplification Engine?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-2-ai-research-showcase-pozycjonowanie-jako-ekspert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 2: AI Research Showcase — Pozycjonowanie jako Ekspert
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 2: AI Research Showcase — Pozycjonowanie jako Ekspert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#od-konsumenta-do-kuratora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Od konsumenta do kuratora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magia-dzieje-sie-w-szczegoach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magia dzieje się w szczegółach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-3-authority-building-system-content-ktory-pracuje-na-twoja-reputacje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 3: Authority Building System — Content, który pracuje na Twoją reputację
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 3: Authority Building System — Content, który pracuje na Twoją reputację">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-kazdego-content-creatora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem każdego content creatora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rzeczywisty-przykad-dziaania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rzeczywisty przykład działania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-4-lead-magnet-automation-budowanie-listy-na-autopilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 4: Lead Magnet Automation — Budowanie listy na autopilot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 4: Lead Magnet Automation — Budowanie listy na autopilot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wartosc-ktora-sie-skaluje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wartość, która się skaluje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moj-eksperyment-z-ai-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mój eksperyment z "AI Playbook"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liczby-ktore-mowia-same-za-siebie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liczby, które mówią same za siebie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architektura-techniczna-jak-to-wszystko-dziaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architektura Techniczna: Jak to wszystko działa?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architektura Techniczna: Jak to wszystko działa?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fundament-systemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundament systemu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kluczowe-integracje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kluczowe integracje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-danych" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow danych
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymagania-wstepne-co-potrzebujesz-zeby-zaczac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wymagania wstępne: Co potrzebujesz, żeby zacząć?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wymagania wstępne: Co potrzebujesz, żeby zacząć?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimalne-wymagania-techniczne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimalne wymagania techniczne
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wymagania-czasowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wymagania czasowe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budzet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budżet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szczegoowe-setupy-krok-po-kroku" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szczegółowe setupy: Krok po kroku
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szczegółowe setupy: Krok po kroku">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-1-content-amplification-engine-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 1: Content Amplification Engine — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 1: Content Amplification Engine — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#krok-1-przygotowanie-fundamentow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krok 1: Przygotowanie fundamentów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krok-2-makecom-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krok 2: Make.com Scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krok-3-prompty-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krok 3: Prompty AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-2-ai-research-showcase-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 2: AI Research Showcase — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 2: AI Research Showcase — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struktura-monitoringu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struktura monitoringu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gowny-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Główny workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-do-filtrowania-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt do filtrowania relevance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-3-authority-building-system-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 3: Authority Building System — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 3: Authority Building System — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategia-dystrybucji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategia dystrybucji
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optymalizacja-per-platforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optymalizacja per platforma
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-4-lead-magnet-automation-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 4: Lead Magnet Automation — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 4: Lead Magnet Automation — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struktura-personalizacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struktura personalizacji
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompty-do-generowania-blueprintow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompty do generowania blueprintów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompty do generowania blueprintów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrukcja-uzycia-promptow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrukcja użycia promptów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-content-amplification-engine-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 1: Content Amplification Engine Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-2-ai-research-showcase-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 2: AI Research Showcase Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-3-authority-building-system-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 3: Authority Building System Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-4-lead-magnet-automation-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 4: Lead Magnet Automation Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-5-mega-blueprint-cay-ekosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 5: Mega Blueprint - Cały Ekosystem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsumowanie-twoja-droga-do-automatyzacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Podsumowanie: Twoja droga do automatyzacji
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Podsumowanie: Twoja droga do automatyzacji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nastepne-kroki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Następne kroki
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform_comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platformy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GAMMA_PITCH_DECK_PROMPT.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pitch Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jak-zbudowac-pipeline-automatyzacji-dla-personal-brandingu-w-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jak zbudować pipeline automatyzacji dla personal brandingu w AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jak zbudować pipeline automatyzacji dla personal brandingu w AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wprowadzenie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wprowadzenie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlaczego-automatyzacja-ale-z-gowa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dlaczego automatyzacja, ale z głową?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-1-content-amplification-engine-twoj-content-na-sterydach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 1: Content Amplification Engine — Twój Content na Sterydach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 1: Content Amplification Engine — Twój Content na Sterydach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#historia-ktora-zmienia-wszystko" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historia, która zmieniła wszystko
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jak-dziaa-content-amplification-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jak działa Content Amplification Engine?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-2-ai-research-showcase-pozycjonowanie-jako-ekspert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 2: AI Research Showcase — Pozycjonowanie jako Ekspert
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 2: AI Research Showcase — Pozycjonowanie jako Ekspert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#od-konsumenta-do-kuratora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Od konsumenta do kuratora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magia-dzieje-sie-w-szczegoach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magia dzieje się w szczegółach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-3-authority-building-system-content-ktory-pracuje-na-twoja-reputacje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 3: Authority Building System — Content, który pracuje na Twoją reputację
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 3: Authority Building System — Content, który pracuje na Twoją reputację">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-kazdego-content-creatora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem każdego content creatora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rzeczywisty-przykad-dziaania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rzeczywisty przykład działania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-4-lead-magnet-automation-budowanie-listy-na-autopilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 4: Lead Magnet Automation — Budowanie listy na autopilot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 4: Lead Magnet Automation — Budowanie listy na autopilot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wartosc-ktora-sie-skaluje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wartość, która się skaluje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moj-eksperyment-z-ai-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mój eksperyment z "AI Playbook"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liczby-ktore-mowia-same-za-siebie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liczby, które mówią same za siebie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architektura-techniczna-jak-to-wszystko-dziaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architektura Techniczna: Jak to wszystko działa?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architektura Techniczna: Jak to wszystko działa?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fundament-systemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundament systemu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kluczowe-integracje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kluczowe integracje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-danych" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow danych
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymagania-wstepne-co-potrzebujesz-zeby-zaczac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wymagania wstępne: Co potrzebujesz, żeby zacząć?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wymagania wstępne: Co potrzebujesz, żeby zacząć?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimalne-wymagania-techniczne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimalne wymagania techniczne
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wymagania-czasowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wymagania czasowe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budzet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budżet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szczegoowe-setupy-krok-po-kroku" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szczegółowe setupy: Krok po kroku
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szczegółowe setupy: Krok po kroku">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-1-content-amplification-engine-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 1: Content Amplification Engine — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 1: Content Amplification Engine — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#krok-1-przygotowanie-fundamentow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krok 1: Przygotowanie fundamentów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krok-2-makecom-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krok 2: Make.com Scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krok-3-prompty-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krok 3: Prompty AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-2-ai-research-showcase-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 2: AI Research Showcase — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 2: AI Research Showcase — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struktura-monitoringu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struktura monitoringu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gowny-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Główny workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-do-filtrowania-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt do filtrowania relevance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-3-authority-building-system-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 3: Authority Building System — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 3: Authority Building System — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategia-dystrybucji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategia dystrybucji
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optymalizacja-per-platforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optymalizacja per platforma
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-4-lead-magnet-automation-szczegoowy-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline 4: Lead Magnet Automation — Szczegółowy Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline 4: Lead Magnet Automation — Szczegółowy Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struktura-personalizacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struktura personalizacji
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompty-do-generowania-blueprintow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompty do generowania blueprintów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompty do generowania blueprintów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrukcja-uzycia-promptow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrukcja użycia promptów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-content-amplification-engine-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 1: Content Amplification Engine Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-2-ai-research-showcase-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 2: AI Research Showcase Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-3-authority-building-system-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 3: Authority Building System Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-4-lead-magnet-automation-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 4: Lead Magnet Automation Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-5-mega-blueprint-cay-ekosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt 5: Mega Blueprint - Cały Ekosystem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsumowanie-twoja-droga-do-automatyzacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Podsumowanie: Twoja droga do automatyzacji
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Podsumowanie: Twoja droga do automatyzacji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nastepne-kroki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Następne kroki
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="studium-przypadku-automatyzacji-wzrostu-od-0-do-1000-w-6-tygodni">Studium przypadku automatyzacji wzrostu: Od 0 do 1000 w 6 tygodni</h1>
+<h2 id="jak-zbudowac-pipeline-automatyzacji-dla-personal-brandingu-w-ai">Jak zbudować pipeline automatyzacji dla personal brandingu w AI</h2>
+<h3 id="wprowadzenie">Wprowadzenie</h3>
+<p>Kiedy zaczynałem budować swoją obecność online jako Design Lead z pasją do AI, stanąłem przed typowym wyzwaniem: jak znaleźć czas na konsekwentne tworzenie contentu, budowanie społeczności i jednocześnie nie zaniedbać głównej pracy? Odpowiedzią okazała się automatyzacja — ale nie byle jaka. Stworzyłem system, który w ciągu 6 tygodni przyniósł mi ponad 1000 subskrybentów newslettera, dziesiątki zapytań o współpracę i pozycję eksperta w swojej niszy.</p>
+<p>Ten case study to nie tylko historia sukcesu, ale praktyczny przewodnik, który pokazuje krok po kroku, jak zbudować podobny system. Przedstawię cztery główne pipeline'y automatyzacji, które możesz wdrożyć w swoim przypadku, niezależnie od tego, czy prowadzisz blog techniczny, budujesz personal brand, czy rozwijasz startup.</p>
+<h3 id="dlaczego-automatyzacja-ale-z-gowa">Dlaczego automatyzacja, ale z głową?</h3>
+<p>Zanim przejdę do konkretów, ważne zastrzeżenie: automatyzacja nie zastąpi autentyczności. System, który stworzyłem, nie generuje contentu za mnie — pomaga mi dotrzeć z moimi przemyśleniami do większej liczby osób, w odpowiednim czasie i formacie. To jak posiadanie własnego zespołu marketingowego, który pracuje 24/7, ale zawsze według Twoich wytycznych.</p>
+<h2 id="pipeline-1-content-amplification-engine-twoj-content-na-sterydach">Pipeline 1: Content Amplification Engine — Twój Content na Sterydach</h2>
+<h3 id="historia-ktora-zmienia-wszystko">Historia, która zmieniła wszystko</h3>
+<p>Pewnego poniedziałkowego poranka opublikowałem artykuł o wykorzystaniu AI w procesie projektowania. Normalnie zajęłoby mi kolejne 2-3 godziny promocja tego contentu na różnych platformach. Tym razem wystarczyło kliknięcie "Publish" — resztą zajął się mój Content Amplification Engine.</p>
+<p>W ciągu godziny artykuł pojawił się na LinkedIn w pięciu różnych wersjach (każda testowała inny hook), na Twitterze jako rozbudowany thread, a moi subskrybenci newslettera otrzymali spersonalizowane powiadomienie. Po dwóch godzinach system wykrył, że jedna z wersji na LinkedIn zyskuje nieoczekiwaną popularność — automatycznie zwiększył jej zasięg poprzez reshare z dodatkowym komentarzem.</p>
+<p>Rezultat? Post osiągnął ponad 15 000 wyświetleń, 300+ reakcji i przyniósł 89 nowych subskrybentów newslettera. Wszystko bez mojej dalszej interwencji.</p>
+<h3 id="jak-dziaa-content-amplification-engine">Jak działa Content Amplification Engine?</h3>
+<p>System opiera się na prostej filozofii: jeden content, wiele formatów, inteligentna dystrybucja. Kiedy publikujesz nowy artykuł, pipeline automatycznie:</p>
+<ol>
+<li><strong>Analizuje treść</strong> i generuje alternatywne tytuły dostosowane do różnych platform</li>
+<li><strong>Tworzy wizualizacje</strong> dopasowane do specyfiki każdego kanału</li>
+<li><strong>Publikuje w optymalnym czasie</strong> na podstawie historycznych danych engagement</li>
+<li><strong>Monitoruje performance</strong> i podejmuje akcje w czasie rzeczywistym</li>
+<li><strong>Uczy się z każdej publikacji</strong>, co działa najlepiej dla Twojej audiencji</li>
+</ol>
+<p>Kluczem jest wykorzystanie AI (Claude) do generowania wariantów, które zachowują Twój głos i styl, ale są zoptymalizowane pod kątem różnych segmentów odbiorców.</p>
+<h2 id="pipeline-2-ai-research-showcase-pozycjonowanie-jako-ekspert">Pipeline 2: AI Research Showcase — Pozycjonowanie jako Ekspert</h2>
+<h3 id="od-konsumenta-do-kuratora">Od konsumenta do kuratora</h3>
+<p>Codziennie w świecie AI publikowane są setki nowych badań, artykułów i case studies. Śledzenie wszystkiego jest niemożliwe, ale co jeśli mógłbyś automatycznie wyłapywać najważniejsze trendy i dodawać do nich swój ekspercki komentarz?</p>
+<p>AI Research Showcase to pipeline, który przekształcił mnie z biernego obserwatora w aktywnego komentatora trendów. System codziennie skanuje kluczowe źródła (Arxiv, Papers with Code, branżowe blogi), identyfikuje tematy związane z moją specjalizacją (AI + UX/Design) i przygotowuje streszczenia z miejscem na mój komentarz.</p>
+<h3 id="magia-dzieje-sie-w-szczegoach">Magia dzieje się w szczegółach</h3>
+<p>Wyobraź sobie: wstajesz rano, a w skrzynce czeka na Ciebie już przygotowany draft posta: "Nowe badanie MIT pokazuje, że użytkownicy są o 40% bardziej skłonni zaufać AI, gdy..." — wraz z kluczowymi wnioskami i miejscem na Twój komentarz ekspercki.</p>
+<p>Dodajesz swoją perspektywę — może przykład z własnego doświadczenia, może przewidywanie, jak wpłynie to na branżę — i publikujesz. System automatycznie taguje autorów badania na LinkedIn, dodaje do Twojego "AI Research Digest" i wysyła do osób, które zapisały się na Twoje ekskluzywne insights.</p>
+<p>Efekt? W ciągu miesiąca stałem się go-to osobą w swojej sieci, jeśli chodzi o trendy AI w designie. Otrzymuję regularne zaproszenia na webinary, konsultacje i współprace.</p>
+<h2 id="pipeline-3-authority-building-system-content-ktory-pracuje-na-twoja-reputacje">Pipeline 3: Authority Building System — Content, który pracuje na Twoją reputację</h2>
+<h3 id="problem-kazdego-content-creatora">Problem każdego content creatora</h3>
+<p>"Publish and pray" — publikujesz i modlisz się o zasięgi. Brzmi znajomo? Authority Building System rozwiązuje ten problem poprzez strategiczne podejście do dystrybucji i pozycjonowania contentu.</p>
+<p>Ten pipeline nie tylko publikuje Twoje treści, ale aktywnie pracuje nad budowaniem Twojego autorytetu. Jak? Poprzez inteligentne targetowanie, cross-platform syndykację i ciągłą optymalizację.</p>
+<h3 id="rzeczywisty-przykad-dziaania">Rzeczywisty przykład działania</h3>
+<p>Napisałem obszerny poradnik "AI Tools dla Design Leaders". Zamiast po prostu wrzucić go na blog i liczyć na cud, system:</p>
+<ol>
+<li><strong>Przeanalizował konkurencyjne artykuły</strong> i znalazł luki w ich treści</li>
+<li><strong>Zoptymalizował pod kątem SEO</strong> zachowując naturalny język</li>
+<li><strong>Opublikował na 5 platformach</strong> (Medium, Dev.to, Hashnode, LinkedIn, własny blog)</li>
+<li><strong>Automatycznie submitował</strong> do agregatów (Hacker News, Designer News)</li>
+<li><strong>Śledził pozycje i engagement</strong>, dostosowując strategię promocji</li>
+</ol>
+<p>Rezultat? Artykuł osiągnął top 3 w kategorii "AI Design" na Medium, został featured na Hacker News i przyniósł ponad 5000 unikalnych czytelników w pierwszym tygodniu.</p>
+<h2 id="pipeline-4-lead-magnet-automation-budowanie-listy-na-autopilot">Pipeline 4: Lead Magnet Automation — Budowanie listy na autopilot</h2>
+<h3 id="wartosc-ktora-sie-skaluje">Wartość, która się skaluje</h3>
+<p>Lead magnet to sprawdzony sposób na budowanie listy mailingowej, ale co jeśli mógłbyś sprawić, że każdy lead czuje się wyjątkowo? Lead Magnet Automation personalizuje doświadczenie każdego, kto pobiera Twoje materiały.</p>
+<h3 id="moj-eksperyment-z-ai-playbook">Mój eksperyment z "AI Playbook"</h3>
+<p>Stworzyłem kompleksowy przewodnik "AI Tools dla Design Leaders — Praktyczny Playbook 2025". Ale zamiast standardowego "pobierz PDF i zniknij", zbudowałem system, który:</p>
+<ol>
+<li><strong>Personalizuje PDF</strong> — każdy otrzymuje wersję z własnym imieniem i dostosowanymi rekomendacjami</li>
+<li><strong>Segmentuje odbiorców</strong> — Designer? Developer? Manager? Każdy otrzymuje inną ścieżkę follow-up</li>
+<li><strong>Edukuje stopniowo</strong> — 7-dniowa sekwencja budująca wartość i zaufanie</li>
+<li><strong>Konwertuje naturalnie</strong> — w dniu 5 otrzymujesz ofertę konsultacji, ale tylko jeśli Twoje zachowanie wskazuje na zainteresowanie</li>
+</ol>
+<h3 id="liczby-ktore-mowia-same-za-siebie">Liczby, które mówią same za siebie</h3>
+<ul>
+<li>500+ pobrań w pierwszym miesiącu</li>
+<li>40% open rate w sekwencji email (branżowa średnia to 21%)</li>
+<li>12% konwersja na konsultację (vs. 2% przy standardowym podejściu)</li>
+<li>95% zadowolenia z personalizacji (na podstawie ankiety)</li>
+</ul>
+<hr />
+<h2 id="architektura-techniczna-jak-to-wszystko-dziaa">Architektura Techniczna: Jak to wszystko działa?</h2>
+<h3 id="fundament-systemu">Fundament systemu</h3>
+<p>Wszystkie cztery pipeline'y opierają się na dwóch głównych platformach:</p>
+<p><strong>Make.com</strong> — sercem operacji, odpowiada za:
+- Integrację różnych serwisów (ponad 1000 możliwych połączeń)
+- Wizualny flow automatyzacji (nie wymaga programowania)
+- Niezawodność i skalowalność (99.9% uptime)</p>
+<p><strong>n8n</strong> — dla bardziej zaawansowanych scenariuszy:
+- Własny hosting (pełna kontrola nad danymi)
+- Możliwość pisania custom kodu
+- Integracja z lokalnymi bazami danych</p>
+<h3 id="kluczowe-integracje">Kluczowe integracje</h3>
+<p>System łączy ze sobą następujące serwisy:</p>
+<p><strong>Content &amp; Publishing:</strong>
+- WordPress/Ghost (blog)
+- LinkedIn, Twitter/X (social media)
+- Medium, Dev.to, Hashnode (syndykacja)
+- ConvertKit/Mailchimp (email)</p>
+<p><strong>AI &amp; Automation:</strong>
+- Claude API (generowanie wariantów)
+- Bannerbear/Canva API (grafiki)
+- GPT-4 Vision (analiza wizualna)</p>
+<p><strong>Analytics &amp; Tracking:</strong>
+- Airtable (centralna baza danych)
+- Google Sheets (dashboardy)
+- Bit.ly (śledzenie linków)
+- Zapier Webhooks (custom eventy)</p>
+<h3 id="flow-danych">Flow danych</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Nowy Content → Trigger → AI Processing → Multi-channel Distribution → 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>→ Performance Tracking → Optimization Loop → Insights &amp; Learning
+</code></pre></div>
+<p>Każdy element systemu generuje dane, które zasilają kolejne decyzje. To nie jest sztywny pipeline — to żywy organizm, który uczy się i adaptuje.</p>
+<hr />
+<h2 id="wymagania-wstepne-co-potrzebujesz-zeby-zaczac">Wymagania wstępne: Co potrzebujesz, żeby zacząć?</h2>
+<h3 id="minimalne-wymagania-techniczne">Minimalne wymagania techniczne</h3>
+<p><strong>Platformy (wybierz jedną lub obie):</strong>
+- Make.com — plan Free dla testów, Teams ($29/mo) dla produkcji
+- n8n — self-hosted (darmowy) lub Cloud ($20/mo)</p>
+<p><strong>Niezbędne konta:</strong>
+- Blog/CMS z RSS lub webhook
+- LinkedIn z API access
+- Email service provider (ESP)
+- Claude API lub OpenAI</p>
+<p><strong>Opcjonalne, ale przydatne:</strong>
+- Airtable (darmowy plan wystarczy)
+- Canva/Bannerbear dla grafik
+- Analytics tool (Mixpanel/Amplitude)</p>
+<h3 id="wymagania-czasowe">Wymagania czasowe</h3>
+<p><strong>Setup początkowy:</strong> 10-15 godzin rozłożonych na 2 tygodnie
+<strong>Maintenance:</strong> 2-3 godziny tygodniowo
+<strong>ROI:</strong> Zwrot czasu po 3-4 tygodniach</p>
+<h3 id="budzet">Budżet</h3>
+<p><strong>Wariant minimalny:</strong> $50/miesiąc
+- Make.com Teams: $29
+- Claude API: $20
+- Reszta: darmowe plany</p>
+<p><strong>Wariant optymalny:</strong> $150/miesiąc
+- Dodatkowe narzędzia i wyższe limity
+- Lepsze możliwości skalowania</p>
+<hr />
+<h2 id="szczegoowe-setupy-krok-po-kroku">Szczegółowe setupy: Krok po kroku</h2>
+<h3 id="pipeline-1-content-amplification-engine-szczegoowy-setup">Pipeline 1: Content Amplification Engine — Szczegółowy Setup</h3>
+<h4 id="krok-1-przygotowanie-fundamentow">Krok 1: Przygotowanie fundamentów</h4>
+<p>Zacznij od stworzenia struktury w Airtable, która będzie sercem Twojego systemu:</p>
+<p><strong>Tabela "Content Pipeline":</strong>
+- Title (tekst)
+- Original URL (link)
+- Status (dropdown: Draft, Published, Amplifying, Completed)
+- LinkedIn Variants (long text) 
+- Twitter Thread (long text)
+- Performance Metrics (linked record)
+- Best Performing Version (formula)</p>
+<p><strong>Tabela "Performance Tracking":</strong>
+- Content ID (linked)
+- Platform (dropdown)
+- Impressions (number)
+- Clicks (number)
+- Engagement Rate (formula)
+- Time Posted (date/time)</p>
+<h4 id="krok-2-makecom-scenario">Krok 2: Make.com Scenario</h4>
+<p><strong>Główny flow:</strong></p>
+<ol>
+<li><strong>Webhook trigger</strong> nasłuchuje na nowe posty</li>
+<li><strong>Claude API call</strong> generuje 5 wariantów tytułów z różnymi hookami</li>
+<li><strong>Router</strong> rozdziela warianty do różnych ścieżek</li>
+<li><strong>Bannerbear</strong> tworzy unikalne grafiki dla każdego wariantu</li>
+<li><strong>LinkedIn API</strong> publikuje z 30-minutowymi odstępami</li>
+<li><strong>Timer</strong> czeka 2 godziny</li>
+<li><strong>Analytics check</strong> sprawdza, który wariant działa najlepiej</li>
+<li><strong>Action router</strong> podejmuje decyzję o dalszych krokach</li>
+</ol>
+<h4 id="krok-3-prompty-ai">Krok 3: Prompty AI</h4>
+<p><strong>Główny prompt dla Claude (generowanie wariantów):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Jesteś ekspertem od viral content z 10-letnim doświadczeniem w LinkedIn marketing. 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Twoim zadaniem jest przekształcenie poniższego tytułu w 5 różnych wariantów, 
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>każdy zaprojektowany pod innym kątem psychologicznym.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ORYGINALNY TYTUŁ: [title]
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>STRESZCZENIE: [excerpt]
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>TAGI: [tags]
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Wygeneruj 5 wariantów według następujących archetypów:
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>1. KONTROWERSJA: Zacznij od śmiałego stwierdzenia, które wywołuje dyskusję
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>2. CIEKAWOŚĆ: Zadaj pytanie, na które czytelnik MUSI znać odpowiedź  
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>3. FOMO: Pokaż, co czytelnik traci, nie znając tej informacji
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>4. AUTORITET: Użyj liczb/danych pokazujących Twoją ekspertyzę
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>5. TRANSFORMACJA: Pokaż przemianę &quot;od-do&quot;
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>Dla każdego wariantu dodaj:
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>- predicted_engagement: 1-10
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>- target_emotion: główna emocja
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>- best_time_to_post: rano/południe/wieczór
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>Format: JSON
+</code></pre></div>
+<h3 id="pipeline-2-ai-research-showcase-szczegoowy-setup">Pipeline 2: AI Research Showcase — Szczegółowy Setup</h3>
+<h4 id="struktura-monitoringu">Struktura monitoringu</h4>
+<p><strong>Źródła do śledzenia:</strong>
+- ArXiv (cs.AI, cs.HC kategorii)
+- Papers with Code (trending)
+- Google Scholar alerts
+- Branżowe blogi (lista 20 kluczowych)
+- Twitter listy (AI researchers)</p>
+<h4 id="gowny-workflow">Główny workflow</h4>
+<ol>
+<li><strong>Cron trigger</strong> — codziennie o 6:00</li>
+<li><strong>Multi-source scraper</strong> — zbiera najnowsze publikacje</li>
+<li><strong>Relevance filter</strong> — AI ocenia trafność (prompt poniżej)</li>
+<li><strong>Summary generator</strong> — tworzy 3-akapitowe streszczenie</li>
+<li><strong>Expert commentary template</strong> — przygotowuje szkielet posta</li>
+<li><strong>Draft creator</strong> — zapisuje w CMS jako draft</li>
+<li><strong>Notification sender</strong> — powiadomienie o gotowych draftach</li>
+</ol>
+<h4 id="prompt-do-filtrowania-relevance">Prompt do filtrowania relevance</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Oceń relevantność poniższego badania dla osoby o profilu:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>- Design Leader zainteresowany AI
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>- Fokus na praktyczne zastosowania
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- Przecięcie UX/UI z machine learning
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Tytuł badania: [title]
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Abstract: [abstract]
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Odpowiedz w skali 1-10 oraz jednozdaniowym uzasadnieniem.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Powyżej 7 = warte uwagi.
+</code></pre></div>
+<h3 id="pipeline-3-authority-building-system-szczegoowy-setup">Pipeline 3: Authority Building System — Szczegółowy Setup</h3>
+<h4 id="strategia-dystrybucji">Strategia dystrybucji</h4>
+<p><strong>Platformy w kolejności publikacji:</strong>
+1. Własny blog (źródło)
+2. LinkedIn Article (natychmiast)
+3. Medium (po 24h)
+4. Dev.to (po 48h)
+5. Twitter thread (best performing fragment)
+6. Newsletter (podsumowanie + link)</p>
+<h4 id="optymalizacja-per-platforma">Optymalizacja per platforma</h4>
+<p><strong>Medium optimization:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>- Title: max 70 znaków
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>- Subtitle: pytanie lub benefit
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>- Tags: 5 (mix popularnych i niszowych)
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- Images: co 150-200 słów
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- CTA: na końcu, nie w środku
+</code></pre></div></p>
+<p><strong>LinkedIn optimization:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>- Hook: pierwsze 2 linie kluczowe
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>- Formatting: krótkie akapity
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>- Emoji: strategicznie, nie przesadzaj
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>- Hashtags: 3-5 na końcu
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>- Media: zawsze dodaj obraz/wideo
+</code></pre></div></p>
+<h3 id="pipeline-4-lead-magnet-automation-szczegoowy-setup">Pipeline 4: Lead Magnet Automation — Szczegółowy Setup</h3>
+<h4 id="struktura-personalizacji">Struktura personalizacji</h4>
+<p><strong>Segmentacja przy pobraniu:</strong>
+1. Pytanie o rolę (Designer/Developer/Manager/Other)
+2. Wielkość zespołu (Solo/Small/Enterprise)
+3. Poziom wiedzy AI (Beginner/Intermediate/Advanced)</p>
+<p><strong>Ścieżki email (7 dni):</strong></p>
+<p><strong>Dzień 1:</strong> Welcome + personalizowany PDF
+<strong>Dzień 2:</strong> Case study relevant do roli
+<strong>Dzień 3:</strong> Quick win do natychmiastowego wdrożenia<br />
+<strong>Dzień 4:</strong> Zaproszenie do społeczności
+<strong>Dzień 5:</strong> Soft pitch konsultacji (jeśli engagement &gt;60%)
+<strong>Dzień 6:</strong> User story podobnego klienta
+<strong>Dzień 7:</strong> Podsumowanie + next steps</p>
+<hr />
+<h2 id="prompty-do-generowania-blueprintow">Prompty do generowania blueprintów</h2>
+<h3 id="instrukcja-uzycia-promptow">Instrukcja użycia promptów</h3>
+<p>Każdy z poniższych promptów jest zaprojektowany do użycia w osobnej konwersacji z AI. Skopiuj prompt, wklej do nowego chatu i postępuj według instrukcji. AI wygeneruje kompletny blueprint gotowy do importu w Make.com lub n8n.</p>
+<h3 id="prompt-1-content-amplification-engine-blueprint">Prompt 1: Content Amplification Engine Blueprint</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Potrzebuję kompletnego blueprintu Make.com dla Content Amplification Engine. 
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>KONTEKST:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- Prowadzę blog o AI i designie
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>- Publikuję 2-3 razy w tygodniu
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- Główne kanały: LinkedIn, Twitter, Newsletter
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>- Mam dostęp do: Claude API, LinkedIn API, Twitter API, ConvertKit
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>WYMAGANIA:
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>1. Webhook trigger dla nowych postów (WordPress REST API)
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>2. Claude generuje 5 wariantów tytułów (różne hooki psychologiczne)
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>3. Bannerbear tworzy grafiki (template ID podaj jako zmienną)
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>4. Publikacja na LinkedIn z A/B testowaniem
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>5. Twitter thread (4-6 tweetów)
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>6. Newsletter do segmentu &quot;new_content&quot;
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>7. Performance tracking w Airtable
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>8. Re-engagement logic po 2h (boost lub rescue)
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>DODATKOWE:
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>- Error handling na każdym kroku
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>- Slack notifications dla błędów
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>- Bitly dla śledzenia linków
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>- Optimal posting times dla mojej strefy czasowej (CET)
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Wygeneruj:
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>1. Kompletny JSON blueprint do importu
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>2. Lista wymaganych API keys
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>3. Instrukcja krok-po-kroku konfiguracji
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>4. Przykładowe dane testowe
+</code></pre></div>
+<h3 id="prompt-2-ai-research-showcase-blueprint">Prompt 2: AI Research Showcase Blueprint</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Stwórz blueprint n8n workflow dla AI Research Showcase system.
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>CEL: 
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Codzienne monitorowanie źródeł AI research i przygotowanie draft postów z moimi komentarzami eksperckimi.
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>ŹRÓDŁA DO MONITOROWANIA:
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>- ArXiv API (kategorie: cs.AI, cs.HC, cs.CY)
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>- Papers with Code (trending endpoint)
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>- Google Scholar (przez SerpAPI)
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>- RSS: 20 blogów branżowych (podam listę)
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>FLOW:
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>1. Cron trigger: codziennie 6:00 CET
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>2. Parallel data fetching ze wszystkich źródeł
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>3. De-duplikacja i relevance scoring (Claude API)
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>4. Generowanie streszczeń (max 300 słów)
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>5. Tworzenie szkieletu posta z miejscem na komentarz
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>6. Zapis jako draft w WordPress + Ghost
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>7. Airtable tracking wszystkich znalezisk
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>8. Email digest z top 5 items
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>PERSONALIZACJA:
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>- Fokus na: AI + UX/UI + Product Design
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>- Ignoruj: pure ML theory, hardware
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>- Priorytet: practical applications, case studies
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>Output: JSON workflow + node configurations + przykładowe prompty
+</code></pre></div>
+<h3 id="prompt-3-authority-building-system-blueprint">Prompt 3: Authority Building System Blueprint</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Potrzebuję Make.com scenario dla Authority Building System.
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>STRATEGIA:
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Każdy mój artykuł ma trafić na 6 platform z optymalizacją per kanał.
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>PLATFORMS FLOW:
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>1. Source: WordPress (mój blog)
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>2. LinkedIn: natychmiast, z custom formatting
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>3. Medium: +24h, z dodatkowym SEO
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>4. Dev.to: +48h, technical angle
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>5. Hashnode: +72h, dostosowane tagi
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>6. Twitter: best fragments jako thread
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>OPTYMALIZACJE:
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>- SEO analysis przed publikacją (SurferSEO API)
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>- Competitor gap analysis (Ahrefs API)
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>- Auto-submit do agregatów (HN, Reddit, DN)
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>- Performance tracking cross-platform
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>- Smart retargeting niedoczytanych
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>SPECJALNE:
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>- Jeśli post &gt;2000 słów: rozbij na serię
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>- Jeśli technical: dodaj code snippets
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>- Jeśli case study: wyciągnij key metrics
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>Stwórz kompletny blueprint z:
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>- Wszystkimi HTTP modules
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>- Transformation logic
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>- Platform-specific formatting
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>- Error recovery
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>- Analytics aggregation
+</code></pre></div>
+<h3 id="prompt-4-lead-magnet-automation-blueprint">Prompt 4: Lead Magnet Automation Blueprint</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Zaprojektuj n8n workflow dla Lead Magnet Automation.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>LEAD MAGNET: 
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>&quot;AI Tools for Design Leaders - 2025 Playbook&quot; (PDF, 50 stron)
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>REQUIREMENTS:
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>1. Landing page form → webhook
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>2. Instant personalized PDF delivery
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>3. Segmentacja (role + experience + team size)
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>4. 7-day email sequence per segment
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>5. Behavioral triggers &amp; scoring
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>6. Consultation upsell logic
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>7. Full analytics &amp; reporting
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>PERSONALIZACJA PDF:
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>- Imię na cover page
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>- Rekomendacje bazowane na roli
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>- Custom checklist na końcu
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>- Relevant case studies
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>EMAIL SEQUENCES (przykład dla &quot;Designer&quot;):
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>- Day 1: Welcome + PDF + quick win
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>- Day 2: Case study (Spotify AI design)
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>- Day 3: Tool tutorial (Figma + AI)
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>- Day 4: Community invitation
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>- Day 5: Consultation offer (if score &gt;60)
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>- Day 6: Success story
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>- Day 7: Next steps + resources
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>TECH STACK:
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>- ConvertKit dla emaili
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>- Bannerbear dla PDF personalizacji
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>- Calendly dla bookingu
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>- Stripe dla płatności
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>- Airtable jako CRM
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>Wygeneruj pełny workflow z decision logic i przykładowymi templates.
+</code></pre></div>
+<h3 id="prompt-5-mega-blueprint-cay-ekosystem">Prompt 5: Mega Blueprint - Cały Ekosystem</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Potrzebuję master blueprint łączący wszystkie 4 pipeline&#39;y w jeden ekosystem.
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ARCHITEKTURA:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- Centralna baza w Airtable (schema poniżej)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>- Make.com dla marketingu &amp; content
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>- n8n dla data processing &amp; AI
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>- Webhook mesh między systemami
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>- Unified analytics dashboard
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>POŁĄCZENIA MIĘDZY PIPELINE&#39;AMI:
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>1. Content → triggers Research showcase
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>2. Research → feeds Authority building  
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>3. Authority → drives Lead magnet
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>4. Lead magnet → nurtures do Content
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>CENTRALNA BAZA:
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>- Contacts (unified z wszystkich źródeł)
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>- Content (wszystkie pieces)
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>- Performance (metryki aggregate)
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>- Automations (log wszystkich akcji)
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>- Revenue (tracking ROI)
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>DODATKOWE SYSTEMY:
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>- Health monitoring (uptime, errors)
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>- Cost tracking (API calls, tools)
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>- A/B test framework
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>- Scaling triggers &amp; alerts
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>Stwórz:
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>1. Architecture diagram (Mermaid)
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>2. Make.com orchestrator scenario
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>3. n8n data pipeline  
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>4. Airtable base template
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>5. Setup documentation
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>6. Migration path gdy przekroczę limity
+</code></pre></div>
+<hr />
+<h2 id="podsumowanie-twoja-droga-do-automatyzacji">Podsumowanie: Twoja droga do automatyzacji</h2>
+<p>Ten case study to dowód, że nie potrzebujesz wielkiego budżetu ani zespołu, żeby zbudować skuteczny system growth automation. Potrzebujesz planu, systematyczności i gotowości do eksperymentowania.</p>
+<p>Zacznij od jednego pipeline'a — polecanym pierwszym krokiem jest Content Amplification Engine. Daje najszybsze rezultaty i najmniejszą barierę wejścia. Gdy zobaczysz pierwsze efekty, naturalnie przejdziesz do kolejnych elementów systemu.</p>
+<p>Pamiętaj: automatyzacja to narzędzie, nie cel. Celem jest dotarcie z Twoją wartością do większej liczby osób, w sposób, który szanuje ich czas i uwagę. System, który tu opisałem, pozwolił mi to osiągnąć. Teraz Twoja kolej.</p>
+<h3 id="nastepne-kroki">Następne kroki</h3>
+<ol>
+<li><strong>Wybierz jeden pipeline do rozpoczęcia</strong></li>
+<li><strong>Załóż konta w wymaganych serwisach</strong> (większość ma darmowe wersje)</li>
+<li><strong>Użyj odpowiedniego prompta</strong> do wygenerowania blueprintu</li>
+<li><strong>Zaimplementuj w Make.com/n8n</strong> (zajmie 2-3 godziny)</li>
+<li><strong>Testuj przez tydzień</strong> i zbieraj dane</li>
+<li><strong>Iteruj i dodawaj kolejne elementy</strong></li>
+</ol>
+<p>Powodzenia w budowaniu własnego growth engine! 🚀</p>
+<hr />
+<p><em>Masz pytania? Chcesz podzielić się swoimi rezultatami? Znajdziesz mnie na LinkedIn jako [Twoje Imię] — zawsze chętnie wymienię się doświadczeniami z innymi automation enthusiasts.</em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ostatnia aktualizacja">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Utworzony">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Powrót do góry
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hretheum/ai_oracle" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/AIResearchOracle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1666 @@
+
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Przewidywanie wpływu publikacji AI za pomocą wczesnych sygnałów">
+      
+      
+        <meta name="author" content="Zespół AI Research Oracle">
+      
+      
+        <link rel="canonical" href="https://hretheum.github.io/ai_oracle/pl/resources/archive/phases/phase_1_data_collection/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>🔍 FAZA 1: Pipeline zbierania danych - AI Research Oracle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faza-1-pipeline-zbierania-danych" class="md-skip">
+          Przejdź do treści
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../../../.." title="AI Research Oracle" class="md-header__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Oracle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🔍 FAZA 1: Pipeline zbierania danych
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Przełącz na tryb ciemny"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb ciemny" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Przełącz na tryb jasny"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb jasny" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Wybierz język">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/pl/" hreflang="pl" class="md-select__link">
+              Polski
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Szukaj">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicjowanie wyszukiwania
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Zakładki" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Strona główna
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hretheum.github.io/ai_oracle/" class="md-tabs__link">
+        
+  
+    
+  
+  🌐 English
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../strategy/business-plan/" class="md-tabs__link">
+          
+  
+  Strategia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../technical/implementation-guide/" class="md-tabs__link">
+          
+  
+  Dokumentacja techniczna
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../operations/roadmap/" class="md-tabs__link">
+          
+  
+  Operacje
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../case-study-example/" class="md-tabs__link">
+          
+  
+  Zasoby
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Nawigacja" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="AI Research Oracle" class="md-nav__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AI Research Oracle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strona główna
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hretheum.github.io/ai_oracle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌐 English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Strategia
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strategia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../strategy/business-plan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan biznesowy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../strategy/pivot-story/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historia pivotu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Dokumentacja techniczna
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dokumentacja techniczna
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technical/implementation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementacja
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technical/api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dokumentacja API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technical/algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorytmy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technical/ml-training-guide.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trening ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Operacje
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Operacje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../operations/roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapa drogowa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../operations/metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metryki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../operations/budget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Budżet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../operations/newsletter-strategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Newsletter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Zasoby
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Zasoby
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../case-study-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Studia przypadków
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform_comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platformy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GAMMA_PITCH_DECK_PROMPT.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pitch Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#przeglad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Przegląd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-trwania-i-zasoby" class="md-nav__link">
+    <span class="md-ellipsis">
+      Czas trwania i zasoby
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kryteria-sukcesu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kryteria sukcesu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-blok-crawlera-arxiv-8h" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Blok crawlera ArXiv [8h]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Blok crawlera ArXiv [8h]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wymagania-wstepne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wymagania wstępne
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zadania
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brama-jakosci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brama jakości
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-kolektor-metryk-autorow-6h" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Kolektor metryk autorów [6h]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Kolektor metryk autorów [6h]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zadania_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zadania
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brama-jakosci_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brama jakości
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-kolektor-sygnaow-spoecznosciowych-8h" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Kolektor sygnałów społecznościowych [8h]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Kolektor sygnałów społecznościowych [8h]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zadania_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zadania
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brama-jakosci_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brama jakości
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-kalkulator-early-signals-score-4h" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Kalkulator Early Signals Score [4h]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Kalkulator Early Signals Score [4h]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zadania_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zadania
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brama-jakosci_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brama jakości
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-zbieranie-danych-historycznych-8h" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Zbieranie danych historycznych [8h]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Zbieranie danych historycznych [8h]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadania_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zadania
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brama-jakosci_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brama jakości
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-kontrole-jakosci-danych-2h" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Kontrole jakości danych [2h]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 Kontrole jakości danych [2h]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zadania_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zadania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przewodnik-rozwiazywania-problemow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Przewodnik rozwiązywania problemów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Przewodnik rozwiązywania problemów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#czeste-problemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Częste problemy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wskazowki-optymalizacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wskazówki optymalizacji
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-kontrolna-ukonczenia-fazy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lista kontrolna ukończenia fazy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osiagniete-metryki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Osiągnięte metryki
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nastepna-faza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Następna faza
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="faza-1-pipeline-zbierania-danych">🔍 FAZA 1: Pipeline zbierania danych</h1>
+<p><a href="./ROADMAP_MASTER.md">← Powrót do głównego planu</a> | <a href="../phase_0_foundation/">← Poprzednia: Faza 0</a></p>
+<h2 id="przeglad">Przegląd</h2>
+<p>Budowa pipeline'u do zbierania artykułów i wczesnych sygnałów. Fokus na automatyzacji i skalowalności.</p>
+<h2 id="czas-trwania-i-zasoby">Czas trwania i zasoby</h2>
+<ul>
+<li><strong>Całkowity czas</strong>: 1 tydzień (40h pracy)</li>
+<li><strong>Wymagane umiejętności</strong>: Integracja API, podstawy Make.com</li>
+<li><strong>Budżet</strong>: $0-100 (Twitter API opcjonalne)</li>
+</ul>
+<h2 id="kryteria-sukcesu">Kryteria sukcesu</h2>
+<ul>
+<li>[ ] 1000+ artykułów zebranych z metadanymi</li>
+<li>[ ] Wczesne sygnały dla 100+ artykułów o wysokim wyniku</li>
+<li>[ ] Dane historyczne gotowe do trenowania ML</li>
+<li>[ ] Automatyczne codzienne zbieranie działa</li>
+</ul>
+<hr />
+<h2 id="11-blok-crawlera-arxiv-8h">1.1 Blok crawlera ArXiv [8h]</h2>
+<h3 id="wymagania-wstepne">Wymagania wstępne</h3>
+<ul>
+<li>Konto Make.com aktywne</li>
+<li>Tabela Papers w Airtable gotowa</li>
+</ul>
+<h3 id="zadania">Zadania</h3>
+<ul>
+<li>[ ] <strong>1.1.1</strong> Utwórz scenariusz crawlera ArXiv (30 min)</li>
+<li>Nowy scenariusz: "Oracle - ArXiv Daily Crawler"</li>
+<li>Wyzwalacz harmonogramu: Codziennie 6:00 UTC</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Wyzwalacz zaplanowany</p>
+</li>
+<li>
+<p>[ ] <strong>1.1.2</strong> Skonfiguruj moduł ArXiv API (45 min)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Moduł HTTP Request:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- URL: http://export.arxiv.org/api/query
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- Metoda: GET
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- Query String:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  * search_query: cat:cs.AI OR cat:cs.LG OR cat:cs.CL
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  * start: 0
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  * max_results: 50
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  * sortBy: submittedDate
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  * sortOrder: descending
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Zwraca XML z artykułami</p>
+</li>
+<li>
+<p>[ ] <strong>1.1.3</strong> Parsuj odpowiedź XML (1h)</p>
+</li>
+<li>Dodaj moduł XML Parser</li>
+<li>Mapuj do struktury JSON</li>
+<li>Wyodrębnij wszystkie węzły entry</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Widzisz tablicę artykułów</p>
+</li>
+<li>
+<p>[ ] <strong>1.1.4</strong> Konfiguracja iteratora (30 min)</p>
+</li>
+<li>Dodaj moduł Iterator</li>
+<li>Wejście: sparsowana tablica entries</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Przetwarza każdy artykuł</p>
+</li>
+<li>
+<p>[ ] <strong>1.1.5</strong> Mapowanie danych (1h)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Dla każdego artykułu, wyodrębnij:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- title: {{entry.title}}
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- arxiv_id: {{split(entry.id; &quot;/&quot;)[last]}}
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- authors: {{join(map(entry.author; &quot;name&quot;); &quot;, &quot;)}}
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- abstract: {{entry.summary}}
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- pdf_url: {{first(map(filter(entry.link; href; contains(href; &quot;pdf&quot;)); &quot;href&quot;))}}
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- submitted_date: {{parseDate(entry.published; &quot;YYYY-MM-DD&quot;)}}
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Wszystkie pola zmapowane poprawnie</p>
+</li>
+<li>
+<p>[ ] <strong>1.1.6</strong> Zapisz do Airtable (45 min)</p>
+</li>
+<li>Dodaj moduł Airtable "Create Record"</li>
+<li>Mapuj wszystkie pola</li>
+<li>Ustaw obsługę błędów</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Testowy artykuł zapisany</p>
+</li>
+<li>
+<p>[ ] <strong>1.1.7</strong> Sprawdzanie duplikatów (30 min)</p>
+</li>
+<li>Przed zapisem, szukaj istniejącego arxiv_id</li>
+<li>Pomiń jeśli istnieje</li>
+<li>✓ <strong>Walidacja</strong>: Brak tworzonych duplikatów</li>
+</ul>
+<h3 id="brama-jakosci">Brama jakości</h3>
+<p>Uruchom pełny scenariusz, zebrano 50+ artykułów? → ✅ Kontynuuj</p>
+<hr />
+<h2 id="12-kolektor-metryk-autorow-6h">1.2 Kolektor metryk autorów [6h]</h2>
+<h3 id="zadania_1">Zadania</h3>
+<ul>
+<li>[ ] <strong>1.2.1</strong> Dodaj moduł Semantic Scholar (1h)</li>
+<li>Po Iterator, dodaj Router</li>
+<li>Pierwsza trasa: Wyszukiwanie autora</li>
+<li>HTTP Request do SS API</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Zwraca dane autora</p>
+</li>
+<li>
+<p>[ ] <strong>1.2.2</strong> Wyodrębnij pierwszego autora (30 min)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Pobierz imię pierwszego autora</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">split</span><span class="p">(</span><span class="mf">5.</span><span class="nx">authors</span><span class="p">;</span><span class="w"> </span><span class="s2">&quot;,&quot;</span><span class="p">)}}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">firstAuthor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">trim</span><span class="p">(</span><span class="nx">first</span><span class="p">(</span><span class="nx">authors</span><span class="p">))}}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Czyste imię autora</p>
+</li>
+<li>
+<p>[ ] <strong>1.2.3</strong> Szukaj autora (45 min)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>URL: https://api.semanticscholar.org/graph/v1/author/search
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Query: {{firstAuthor}}
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Fields: authorId,name,hIndex,citationCount
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Zwraca dopasowania autora</p>
+</li>
+<li>
+<p>[ ] <strong>1.2.4</strong> Pobierz h-index (30 min)</p>
+</li>
+<li>Parsuj odpowiedź</li>
+<li>Znajdź najlepsze dopasowanie po podobieństwie nazwy</li>
+<li>Wyodrębnij h-index</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Numeryczny h-index lub 0</p>
+</li>
+<li>
+<p>[ ] <strong>1.2.5</strong> Sprawdź instytucję (45 min)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Lista top instytucji</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">topUnis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Stanford&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CMU&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Google&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DeepMind&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;OpenAI&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hasTop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">topUnis</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">uni</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">{{</span><span class="mf">5.</span><span class="nx">authors</span><span class="p">}}.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">uni</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>✓ <strong>Walidacja</strong>: Boolean true/false</li>
+</ul>
+<h3 id="brama-jakosci_1">Brama jakości</h3>
+<p>Metryki autorów zebrane dla 20+ artykułów? → ✅ Kontynuuj</p>
+<hr />
+<h2 id="13-kolektor-sygnaow-spoecznosciowych-8h">1.3 Kolektor sygnałów społecznościowych [8h]</h2>
+<h3 id="zadania_2">Zadania</h3>
+<ul>
+<li>[ ] <strong>1.3.1</strong> Licznik wzmianek na Twitterze (2h) <code>OPCJONALNE</code></li>
+<li>Jeśli brak Twitter API, przejdź do 1.3.4</li>
+<li>Dodaj moduł wyszukiwania Twitter</li>
+<li>Szukaj: arxiv_id LUB tytuł artykułu</li>
+<li>Policz wzmianki w 24h</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Liczba ≥ 0</p>
+</li>
+<li>
+<p>[ ] <strong>1.3.2</strong> Wyszukiwarka implementacji GitHub (2h)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>GitHub Search API:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>- Query: &quot;{arxiv_id}&quot; OR &quot;{pierwsze 30 znaków tytułu}&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>- Sort: stars
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- Created: &gt;submitted_date
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Lista repozytoriów lub pusta</p>
+</li>
+<li>
+<p>[ ] <strong>1.3.3</strong> Oblicz sygnał GitHub (1h)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hasImplementation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">length</span><span class="p">(</span><span class="mf">12.</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">}}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">totalStars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">sum</span><span class="p">(</span><span class="nx">map</span><span class="p">(</span><span class="mf">12.</span><span class="nx">items</span><span class="p">;</span><span class="w"> </span><span class="s2">&quot;stargazers_count&quot;</span><span class="p">))}}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">repoCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">length</span><span class="p">(</span><span class="mf">12.</span><span class="nx">items</span><span class="p">)}}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Wartości numeryczne</p>
+</li>
+<li>
+<p>[ ] <strong>1.3.4</strong> Alternatywne sygnały (1h)</p>
+</li>
+<li>Jeśli brak Twittera, użyj:<ul>
+<li>Gwiazdki GitHub jako proxy</li>
+<li>Reputacja autora</li>
+<li>Prestiż instytucji</li>
+</ul>
+</li>
+<li>✓ <strong>Walidacja</strong>: Zebrano jakiś sygnał</li>
+</ul>
+<h3 id="brama-jakosci_2">Brama jakości</h3>
+<p>Sygnały społecznościowe dla 50+ artykułów? → ✅ Kontynuuj</p>
+<hr />
+<h2 id="14-kalkulator-early-signals-score-4h">1.4 Kalkulator Early Signals Score [4h]</h2>
+<h3 id="zadania_3">Zadania</h3>
+<ul>
+<li>[ ] <strong>1.4.1</strong> Utwórz funkcję punktacji (1h)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// W module Tools Make.com</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">// Autor (40 pkt max)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">({{</span><span class="nx">authorHIndex</span><span class="p">}}</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">{{</span><span class="nx">hasTopInstitution</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">// Społecznościowe (30 pkt max)  </span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">({{</span><span class="nx">twitterMentions</span><span class="p">}}</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">{{</span><span class="nx">hasGitHub</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">({{</span><span class="nx">githubStars</span><span class="p">}}</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">// Treść (20 pkt max)</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hasCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">contains</span><span class="p">(</span><span class="nx">lower</span><span class="p">(</span><span class="kr">abstract</span><span class="p">);</span><span class="w"> </span><span class="s2">&quot;github.com&quot;</span><span class="p">)}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hasSOTA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">contains</span><span class="p">(</span><span class="nx">lower</span><span class="p">(</span><span class="kr">abstract</span><span class="p">);</span><span class="w"> </span><span class="s2">&quot;state-of-the-art&quot;</span><span class="p">)}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">7</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">hasCode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">hasSOTA</span><span class="p">;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</code></pre></div></li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Zwraca 0-100</p>
+</li>
+<li>
+<p>[ ] <strong>1.4.2</strong> Aktualizuj rekord Airtable (30 min)</p>
+</li>
+<li>Dodaj wynik do rekordu artykułu</li>
+<li>Ustaw flagę needs_prediction</li>
+<li>✓ <strong>Walidacja</strong>: Wynik widoczny w Airtable</li>
+</ul>
+<h3 id="brama-jakosci_3">Brama jakości</h3>
+<p>100+ artykułów ocenionych? Zidentyfikowano artykuły o wysokim wyniku? → ✅ Kontynuuj</p>
+<hr />
+<h2 id="15-zbieranie-danych-historycznych-8h">1.5 Zbieranie danych historycznych [8h]</h2>
+<h3 id="cel">Cel</h3>
+<p>Potrzebujemy artykułów z lat 2020-2022 ze znanymi cytowaniami do trenowania ML</p>
+<h3 id="zadania_4">Zadania</h3>
+<ul>
+<li>[ ] <strong>1.5.1</strong> Utwórz crawler historyczny (1h)</li>
+<li>Zduplikuj dzienny crawler</li>
+<li>Nazwa: "Oracle - Historical Backfill"</li>
+<li>Wyzwalacz ręczny</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Można uruchomić ręcznie</p>
+</li>
+<li>
+<p>[ ] <strong>1.5.2</strong> Zmodyfikuj zakres dat (30 min)
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Dla każdego miesiąca 2020-2022:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>- search_query: cat:cs.AI AND submittedDate:[20200101 TO 20200131]
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>- max_results: 500
+</code></pre></div></p>
+</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Zwraca stare artykuły</p>
+</li>
+<li>
+<p>[ ] <strong>1.5.3</strong> Dodaj wyszukiwanie cytowań (2h)</p>
+</li>
+<li>Po podstawowych informacjach, wywołaj Semantic Scholar</li>
+<li>Pobierz aktualną liczbę cytowań</li>
+<li>Zapisz jako "citations_current"</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Liczby cytowań dodane</p>
+</li>
+<li>
+<p>[ ] <strong>1.5.4</strong> Uruchom miesięczne partie (4h)</p>
+</li>
+<li>Przetwarzaj jeden miesiąc na raz</li>
+<li>Monitoruj limity</li>
+<li>Cel ogólny: 10,000+ artykułów</li>
+<li>✓ <strong>Walidacja</strong>: Artykuły z 2020-2022 w bazie</li>
+</ul>
+<h3 id="brama-jakosci_4">Brama jakości</h3>
+<p>5000+ historycznych artykułów z cytowaniami? → ✅ Faza 1 ukończona!</p>
+<hr />
+<h2 id="16-kontrole-jakosci-danych-2h">1.6 Kontrole jakości danych [2h]</h2>
+<h3 id="zadania_5">Zadania</h3>
+<ul>
+<li>[ ] <strong>1.6.1</strong> Weryfikuj kompletność danych (30 min)</li>
+<li>Sprawdź wartości null</li>
+<li>Waliduj zakresy dat</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: &lt;5% brakujących danych</p>
+</li>
+<li>
+<p>[ ] <strong>1.6.2</strong> Sprawdź rozkład sygnałów (30 min)</p>
+</li>
+<li>Wykres rozkładu wyników</li>
+<li>Zakres h-index autorów</li>
+<li>
+<p>✓ <strong>Walidacja</strong>: Rozkład normalny</p>
+</li>
+<li>
+<p>[ ] <strong>1.6.3</strong> Eksport do trenowania ML (1h)</p>
+</li>
+<li>Eksportuj dane historyczne do CSV</li>
+<li>Włącz wszystkie cechy</li>
+<li>✓ <strong>Walidacja</strong>: Czysty plik CSV</li>
+</ul>
+<hr />
+<h2 id="przewodnik-rozwiazywania-problemow">Przewodnik rozwiązywania problemów</h2>
+<h3 id="czeste-problemy">Częste problemy</h3>
+<ol>
+<li><strong>Limit ArXiv</strong>: Dodaj 3-sekundowe opóźnienie między żądaniami</li>
+<li><strong>Semantic Scholar 404</strong>: Niektóre artykuły nie zindeksowane, pomiń</li>
+<li><strong>Limit GitHub</strong>: Użyj uwierzytelnionych żądań</li>
+<li><strong>Timeout Make.com</strong>: Przetwarzaj mniejsze partie</li>
+</ol>
+<h3 id="wskazowki-optymalizacji">Wskazówki optymalizacji</h3>
+<ul>
+<li>Cachuj wyszukiwania autorów (ten sam autor wiele artykułów)</li>
+<li>Przetwarzaj partiami według zakresów dat</li>
+<li>Użyj data stores Make.com do deduplikacji</li>
+</ul>
+<hr />
+<h2 id="lista-kontrolna-ukonczenia-fazy">Lista kontrolna ukończenia fazy</h2>
+<ul>
+<li>[ ] Dzienny crawler operacyjny</li>
+<li>[ ] 1000+ ostatnich artykułów zebranych</li>
+<li>[ ] 5000+ historycznych artykułów z cytowaniami</li>
+<li>[ ] Punktacja wczesnych sygnałów działa</li>
+<li>[ ] Dane wyeksportowane do trenowania ML</li>
+</ul>
+<h2 id="osiagniete-metryki">Osiągnięte metryki</h2>
+<ul>
+<li>Zebrane artykuły: _____</li>
+<li>Średni wynik: _____</li>
+<li>Artykuły o wysokim wyniku (&gt;60): _____</li>
+<li>Artykuły historyczne: _____</li>
+</ul>
+<h2 id="nastepna-faza">Następna faza</h2>
+<p><a href="../phase_2_ml_development/">→ Faza 2: Rozwój modelu ML</a></p>
+<hr />
+<p><strong>Śledzenie czasu</strong>
+- Szacowany: 40h
+- Faktyczny: <strong><em>h
+- Blokery: </em></strong><strong><em>_</em></strong>_</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ostatnia aktualizacja">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Utworzony">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Powrót do góry
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hretheum/ai_oracle" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/AIResearchOracle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

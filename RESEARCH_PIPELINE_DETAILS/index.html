@@ -1,0 +1,2097 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Predicting AI paper impact using early signals">
+      
+      
+        <meta name="author" content="AI Research Oracle Team">
+      
+      
+        <link rel="canonical" href="https://hretheum.github.io/ai_oracle/RESEARCH_PIPELINE_DETAILS/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Pipeline: AI Research Oracle — Przewidywanie Przyszłości Badań AI 🔮 - AI Research Oracle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pipeline-ai-research-oracle-przewidywanie-przyszosci-badan-ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Research Oracle" class="md-header__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Research Oracle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pipeline: AI Research Oracle — Przewidywanie Przyszłości Badań AI 🔮
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/pl/" hreflang="pl" class="md-select__link">
+              Polski
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hretheum.github.io/ai_oracle/pl/" class="md-tabs__link">
+        
+  
+    
+  
+  🌐 Polski
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../strategy/business-plan/" class="md-tabs__link">
+          
+  
+  Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../technical/implementation-guide/" class="md-tabs__link">
+          
+  
+  Technical
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../operations/roadmap/" class="md-tabs__link">
+          
+  
+  Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../resources/case-study-example/" class="md-tabs__link">
+          
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Research Oracle" class="md-nav__button md-logo" aria-label="AI Research Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AI Research Oracle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hretheum.github.io/ai_oracle/pl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌐 Polski
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Strategy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strategy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/business-plan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/pivot-story/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pivot Story
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Technical
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Technical
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical/implementation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical/api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical/algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical/ml-training-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ML Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Operations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/budget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Budget
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/newsletter-strategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Newsletter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/case-study-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Case Studies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/platform_comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platforms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GAMMA_PITCH_DECK_PROMPT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pitch Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#koncepcja-i-cel-biznesowy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Koncepcja i Cel Biznesowy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Koncepcja i Cel Biznesowy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opis-koncepcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opis Koncepcji
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot-od-kuracji-do-predykcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pivot: Od Kuracji do Predykcji
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cele-biznesowe-zaktualizowane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cele Biznesowe (Zaktualizowane)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wartosc-dla-odbiorcow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wartość dla Odbiorców
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architektura-systemu-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architektura Systemu Oracle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architektura Systemu Oracle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zroda-early-signals-pierwsze-7-dni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Źródła Early Signals (Pierwsze 7 dni)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#komponenty-pipelineu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Komponenty Pipeline'u
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Komponenty Pipeline'u">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-early-signals-collector-co-6-godzin" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Early Signals Collector (Co 6 godzin)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-early-signals-scoring-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Early Signals Scoring Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ml-prediction-engine-daily" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ML Prediction Engine (Daily)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-oracle-content-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Oracle Content Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-prediction-validator-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Prediction Validator (Monthly)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szczegoowa-konfiguracja-makecom-oracle-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szczegółowa Konfiguracja Make.com - Oracle Edition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szczegółowa Konfiguracja Make.com - Oracle Edition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-early-signals-collector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 1: Early Signals Collector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-ml-prediction-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 2: ML Prediction Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-oracle-newsletter-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 3: Oracle Newsletter Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-4-prediction-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 4: Prediction Validator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-learning-model-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning Model Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Learning Model Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Data Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zaawansowane-funkcjonalnosci-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zaawansowane Funkcjonalności Oracle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zaawansowane Funkcjonalności Oracle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prediction-confidence-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Prediction Confidence Calibration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-breakthrough-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Breakthrough Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-field-specific-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Field-Specific Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-explanation-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Explanation Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roi-i-metryki-sukcesu-oracle-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROI i Metryki Sukcesu - Oracle Edition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROI i Metryki Sukcesu - Oracle Edition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metryki-predykcji-cel-w-6-miesiecy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metryki Predykcji (Cel w 6 miesięcy)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#koszty-miesieczne-oracle-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Koszty Miesięczne - Oracle Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roi-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROI Calculation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skalowanie-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skalowanie Oracle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skalowanie Oracle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faza-1-miesiace-1-3-proof-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faza 1 (Miesiące 1-3): Proof of Concept
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faza-2-miesiace-4-6-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faza 2 (Miesiące 4-6): Growth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faza-3-miesiace-7-12-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faza 3 (Miesiące 7-12): Scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faza-4-rok-2-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faza 4 (Rok 2+): Platform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Oracle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Oracle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-low-prediction-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: Low prediction accuracy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-gaming-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: Gaming the system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-api-costs-too-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: API costs too high
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-no-early-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: No early signals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-stories-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Stories (Future)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Stories (Future)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#we-called-gpt-4s-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      "We called GPT-4's impact"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#found-the-needle-in-haystack" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Found the needle in haystack"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcs-use-our-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      "VCs use our predictions"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-checklist-oracle-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start Checklist - Oracle Launch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start Checklist - Oracle Launch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-week-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical (Week 1):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-week-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content (Week 2):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#growth-week-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Growth (Week 3-4):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-month-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation (Month 2+):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="pipeline-ai-research-oracle-przewidywanie-przyszosci-badan-ai">Pipeline: AI Research Oracle — Przewidywanie Przyszłości Badań AI 🔮</h1>
+<h2 id="koncepcja-i-cel-biznesowy">Koncepcja i Cel Biznesowy</h2>
+<h3 id="opis-koncepcji">Opis Koncepcji</h3>
+<p>AI Research Oracle to zautomatyzowany system przewidywania przyszłego wpływu publikacji naukowych AI na podstawie sygnałów z pierwszych 7 dni od publikacji. System wykorzystuje machine learning do analizy early signals i generuje predykcje cytowań na 1, 3 i 5 lat.</p>
+<h3 id="pivot-od-kuracji-do-predykcji">Pivot: Od Kuracji do Predykcji</h3>
+<p><strong>Stare podejście</strong>: "Znajdź najlepsze papers na podstawie cytowań"<br />
+<strong>Problem</strong>: Papers potrzebują 1-3 lat na zdobycie cytowań!<br />
+<strong>Nowe podejście</strong>: "Przewiduj które papers będą miały wpływ"<br />
+<strong>Rozwiązanie</strong>: Early signals + ML = predykcje od day 1</p>
+<h3 id="cele-biznesowe-zaktualizowane">Cele Biznesowe (Zaktualizowane)</h3>
+<ol>
+<li><strong>Thought Leadership</strong> - jedyni którzy przewidują impact</li>
+<li><strong>Fejm Generation</strong> - "firma która przewidziała GPT-4 paper"</li>
+<li><strong>Value Creation</strong> - researchers i VCs faktycznie tego potrzebują</li>
+<li><strong>Monetization</strong> - API access, premium predictions</li>
+<li><strong>Exit Path</strong> - acquisition target dla platform badawczych</li>
+</ol>
+<h3 id="wartosc-dla-odbiorcow">Wartość dla Odbiorców</h3>
+<ul>
+<li>Znajdź przełomowe badania zanim staną się popularne</li>
+<li>Oszczędność czasu na śledzeniu tysięcy papers</li>
+<li>Inwestuj/badaj w obszary z wysokim potencjałem</li>
+<li>Track record naszych predykcji = zaufanie</li>
+</ul>
+<h2 id="architektura-systemu-oracle">Architektura Systemu Oracle</h2>
+<h3 id="zroda-early-signals-pierwsze-7-dni">Źródła Early Signals (Pierwsze 7 dni)</h3>
+<ol>
+<li><strong>Author Metrics</strong> - h-index, afiliacja, track record</li>
+<li><strong>Social Signals</strong> - Twitter mentions, Reddit score</li>
+<li><strong>Implementation Signals</strong> - GitHub repos, stars velocity  </li>
+<li><strong>Academic Buzz</strong> - Mendeley readers, blog mentions</li>
+<li><strong>Content Analysis</strong> - novelty claims, SOTA mentions</li>
+</ol>
+<h3 id="komponenty-pipelineu">Komponenty Pipeline'u</h3>
+<h4 id="1-early-signals-collector-co-6-godzin">1. Early Signals Collector (Co 6 godzin)</h4>
+<ul>
+<li>Pobiera nowe papers z ArXiv (ostatnie 24h)</li>
+<li>Dla każdego paper zbiera wszystkie early signals</li>
+<li>Oblicza Early Signals Score (0-100)</li>
+<li>Zapisuje papers z score &gt; 40 do dalszej analizy</li>
+</ul>
+<h4 id="2-early-signals-scoring-algorithm">2. Early Signals Scoring Algorithm</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calculateEarlySignalsScore</span><span class="p">(</span><span class="nx">paper</span><span class="p">,</span><span class="w"> </span><span class="nx">signals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1">// AUTHOR SIGNALS (40 points max)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="c1">// Autorzy z wysokim h-index częściej publikują wpływowe prace</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">maxAuthorHIndex</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">hasTop20University</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">previousBreakthroughs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">hasIndustryAuthor</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="c1">// SOCIAL BUZZ (30 points max)  </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="c1">// Wczesna uwaga społeczności = proxy dla przyszłego wpływu</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">twitterMentions24h</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">signals</span><span class="p">.</span><span class="nx">hasGitHubImplementation</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">githubStars7d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">redditScore</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">signals</span><span class="p">.</span><span class="nx">mendeleyReaders7d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="c1">// CONTENT SIGNALS (20 points max)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="c1">// Papers z kodem i nowymi metodami mają większy impact</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">paper</span><span class="p">.</span><span class="nx">mentionsGitHub</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">paper</span><span class="p">.</span><span class="nx">mentionsDataset</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">paper</span><span class="p">.</span><span class="nx">claimsSOTA</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">7</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">paper</span><span class="p">.</span><span class="nx">claimsNovelMethod</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="c1">// TOPIC MOMENTUM (10 points max)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="c1">// Trending topics get more citations</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">calculateTopicTrendScore</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="nx">keywords</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">isEmergingField</span><span class="p">(</span><span class="nx">paper</span><span class="p">.</span><span class="nx">categories</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="3-ml-prediction-engine-daily">3. ML Prediction Engine (Daily)</h4>
+<p>System wykorzystuje model ML trenowany na danych historycznych:
+- <strong>Training data</strong>: 50,000+ papers z 2018-2022
+- <strong>Features</strong>: Early signals + paper metadata<br />
+- <strong>Target</strong>: Cytowania po 1, 3 i 5 latach
+- <strong>Model</strong>: Ensemble (Random Forest + Neural Network)
+- <strong>Accuracy</strong>: 72% within 20% margin (na danych testowych)</p>
+<h4 id="4-oracle-content-generator">4. Oracle Content Generator</h4>
+<p>Dla top papers (score &gt; 60) generuje:
+- <strong>Prediction Summary</strong> - liczby i percentyle
+- <strong>Rationale</strong> - dlaczego model tak uważa
+- <strong>Impact Analysis</strong> - co to może zmienić
+- <strong>Confidence Score</strong> - jak pewni jesteśmy
+- <strong>Track Link</strong> - publiczny tracker predykcji</p>
+<h4 id="5-prediction-validator-monthly">5. Prediction Validator (Monthly)</h4>
+<ul>
+<li>Sprawdza predykcje sprzed roku</li>
+<li>Oblicza faktyczne cytowania</li>
+<li>Aktualizuje accuracy metrics</li>
+<li>Generuje transparency report</li>
+<li>Feedback do modelu ML</li>
+</ul>
+<h2 id="szczegoowa-konfiguracja-makecom-oracle-edition">Szczegółowa Konfiguracja Make.com - Oracle Edition</h2>
+<h3 id="scenario-1-early-signals-collector">Scenario 1: Early Signals Collector</h3>
+<p><strong>Trigger</strong>: Schedule (Every 6 hours)</p>
+<p><strong>Module 1</strong>: HTTP Request - ArXiv API
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>URL: http://export.arxiv.org/api/query
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Method: GET
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Query Parameters:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- search_query: cat:cs.AI OR cat:cs.LG OR cat:cs.CL
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- start: 0
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- max_results: 100
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- sortBy: submittedDate
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>- sortOrder: descending
+</code></pre></div></p>
+<p><strong>Module 2</strong>: XML Parser
+- Parse ArXiv response
+- Extract: title, authors, abstract, pdf_url, submitted_date, arxiv_id</p>
+<p><strong>Module 3</strong>: Iterator
+- Iterate through each paper</p>
+<p><strong>Module 4</strong>: Parallel Signal Collection (NEW!)
+Używamy Router z parallel processing:</p>
+<p><strong>Branch 1 - Author Metrics</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>HTTP Request → Semantic Scholar Author API
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Extract: h-index, citation count, paper count
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Find max h-index among all authors
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Check for top institutions
+</code></pre></div></p>
+<p><strong>Branch 2 - Twitter Signals</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>HTTP Request → Twitter API v2
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Search: arxiv_id OR &quot;paper title&quot;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Count: mentions in last 24h
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Check: influential accounts mentioning
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Calculate: engagement velocity
+</code></pre></div></p>
+<p><strong>Branch 3 - GitHub Signals</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>HTTP Request → GitHub Search API  
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Search: repos mentioning arxiv_id
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Filter: created in last 7 days
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Count: repos and total stars
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Check: implementation speed
+</code></pre></div></p>
+<p><strong>Branch 4 - Academic Buzz</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>HTTP Request → Altmetric API (optional)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Get: Mendeley readers, blog mentions
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Alternative: Crossref Event Data (free)
+</code></pre></div></p>
+<p><strong>Module 5</strong>: Calculate Early Signals Score
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Aggregate all signals</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authorScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">branch1</span><span class="p">.</span><span class="nx">authorMetrics</span><span class="p">}};</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">socialScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">branch2</span><span class="p">.</span><span class="nx">twitterMetrics</span><span class="p">}}</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">{{</span><span class="nx">branch3</span><span class="p">.</span><span class="nx">githubMetrics</span><span class="p">}};</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">buzzScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nx">branch4</span><span class="p">.</span><span class="nx">academicMetrics</span><span class="p">}};</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">totalScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">authorScore</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">socialScore</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">buzzScore</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">contentScore</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">needsPrediction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">totalScore</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Module 6</strong>: Store in Airtable
+Store all signals + calculated score + needsPrediction flag</p>
+<h3 id="scenario-2-ml-prediction-pipeline">Scenario 2: ML Prediction Pipeline</h3>
+<p><strong>Trigger</strong>: Schedule (Daily at 10:00 UTC)</p>
+<p><strong>Module 1</strong>: Airtable - Get High-Score Papers
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Filter: AND(
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  {early_signals_score} &gt; 60,
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  {predicted} != TRUE(),
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  {days_since_published} &lt;= 7
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>)
+</code></pre></div></p>
+<p><strong>Module 2</strong>: Iterator through papers</p>
+<p><strong>Module 3</strong>: Prepare ML Features
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="c1">// Author features</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nx">author_max_h_index</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">author_h_index</span><span class="p">}},</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nx">author_citation_count</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">author_citations</span><span class="p">}},</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nx">has_top_institution</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">top_institution</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nx">author_paper_count</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">author_papers</span><span class="p">}},</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="c1">// Social features  </span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nx">twitter_mentions_24h</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">twitter_mentions_24h</span><span class="p">}},</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nx">twitter_engagement_rate</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">twitter_engagement</span><span class="p">}},</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="nx">github_implementations</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">github_repos</span><span class="p">}},</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="nx">github_stars_velocity</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">github_stars_7d</span><span class="p">}},</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="c1">// Content features</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="nx">abstract_length</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="kr">abstract</span><span class="p">}}.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">).</span><span class="nx">length</span><span class="p">,</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="nx">has_code_mention</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">has_code</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="nx">claims_sota</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">claims_sota</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="nx">novel_method_claim</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">novel_claim</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">  </span><span class="c1">// Topic features</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">  </span><span class="nx">topic_trend_score</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">topic_momentum</span><span class="p">}},</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">  </span><span class="nx">is_emerging_field</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">emerging_field</span><span class="p">}}</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">  </span><span class="c1">// Temporal features</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span><span class="nx">days_since_published</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">days_old</span><span class="p">}},</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">  </span><span class="nx">published_day_of_week</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">paper</span><span class="p">.</span><span class="nx">pub_day</span><span class="p">}}</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="p">};</span>
+</code></pre></div></p>
+<p><strong>Module 4</strong>: Call ML Prediction API
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>URL: https://oracle-api.yourdomain.com/predict
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Method: POST
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Headers: 
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  Content-Type: application/json
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  X-API-Key: {{oracle_api_key}}
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Body: {
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  &quot;paper_id&quot;: &quot;{{paper.arxiv_id}}&quot;,
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  &quot;features&quot;: {{features}},
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  &quot;model_version&quot;: &quot;v2.3&quot;
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>}
+</code></pre></div></p>
+<p>Response structure:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;predictions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;citations_1yr&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;citations_3yr&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">167</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;citations_5yr&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">423</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nt">&quot;percentile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="nt">&quot;breakthrough_probability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="nt">&quot;similar_papers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;2023.4567&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2023.8901&quot;</span><span class="p">],</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="nt">&quot;explanation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;High author impact + rapid GitHub adoption&quot;</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Module 5</strong>: Generate Oracle Content
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>🔮 Oracle Prediction for: {{paper.title}}
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Predicted Impact:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- 1 year: {{prediction.citations_1yr}} citations
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>- 3 years: {{prediction.citations_3yr}} citations  
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>- 5 years: {{prediction.citations_5yr}} citations
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>This would place it in the top {{100-prediction.percentile}}% of AI papers.
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>Confidence: {{prediction.confidence*100}}%
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>Breakthrough probability: {{prediction.breakthrough_probability*100}}%
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>Why we think this will matter:
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>{{generateExplanation(paper, prediction)}}
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>Track this prediction: https://airesearchoracle.com/p/{{paper.arxiv_id}}
+</code></pre></div></p>
+<p><strong>Module 6</strong>: Update Airtable with Predictions
+Add all prediction data + generated content</p>
+<h3 id="scenario-3-oracle-newsletter-generator">Scenario 3: Oracle Newsletter Generator</h3>
+<p><strong>Trigger</strong>: Schedule (Weekly, Sunday 10:00 UTC)</p>
+<p><strong>Module 1</strong>: Get Week's Top Predictions
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Airtable Filter: AND(
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  {prediction_date} &gt;= DATEADD(TODAY(), -7, &#39;days&#39;),
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  {confidence} &gt; 0.7
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>)
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Sort: confidence DESC
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Limit: 5
+</code></pre></div></p>
+<p><strong>Module 2</strong>: Get Accuracy Stats
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Check last month&#39;s predictions
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Calculate accuracy rate
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Find best/worst predictions
+</code></pre></div></p>
+<p><strong>Module 3</strong>: Generate Newsletter Content
+Using template with sections:
+- Oracle Accuracy Update
+- This Week's Top 5 Predictions
+- Deep Dive on #1 Prediction
+- Community Prediction Challenge
+- Track Our Record</p>
+<p><strong>Module 4</strong>: Send via Beehiiv/SendGrid</p>
+<h3 id="scenario-4-prediction-validator">Scenario 4: Prediction Validator</h3>
+<p><strong>Trigger</strong>: Schedule (Monthly, 1st Monday)</p>
+<p><strong>Module 1</strong>: Get Old Predictions
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Filter: AND(
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  {prediction_date} &lt;= DATEADD(TODAY(), -365, &#39;days&#39;),
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  {validated} != TRUE()
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>)
+</code></pre></div></p>
+<p><strong>Module 2</strong>: Check Actual Citations
+For each prediction:
+- Call Semantic Scholar API
+- Get current citation count
+- Calculate accuracy</p>
+<p><strong>Module 3</strong>: Update Records
+- Mark as validated
+- Store actual citations
+- Calculate error margin</p>
+<p><strong>Module 4</strong>: Generate Transparency Report
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>📊 Oracle Accuracy Report - {{month}}
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Predictions made 1 year ago: {{count}}
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Within 20% margin: {{accurate_count}} ({{accuracy_rate}}%)
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Best prediction: 
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>&quot;{{best.title}}&quot;
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>Predicted: {{best.predicted}} | Actual: {{best.actual}} ✅
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>Biggest miss:
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>&quot;{{worst.title}}&quot;  
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>Predicted: {{worst.predicted}} | Actual: {{worst.actual}} 📉
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>Overall accuracy trend: {{trend}}
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>Full data: airesearchoracle.com/accuracy
+</code></pre></div></p>
+<h2 id="machine-learning-model-details">Machine Learning Model Details</h2>
+<h3 id="training-data-collection">Training Data Collection</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Collect papers from 2018-2022 with known citations</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">papers</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2023</span><span class="p">):</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="n">year_papers</span> <span class="o">=</span> <span class="n">fetch_arxiv_papers</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="k">for</span> <span class="n">paper</span> <span class="ow">in</span> <span class="n">year_papers</span><span class="p">:</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>        <span class="c1"># Get early signals (simulate 7-day window)</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>        <span class="n">early_signals</span> <span class="o">=</span> <span class="n">reconstruct_early_signals</span><span class="p">(</span><span class="n">paper</span><span class="p">)</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>        <span class="c1"># Get actual citations now</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>        <span class="n">current_citations</span> <span class="o">=</span> <span class="n">get_current_citations</span><span class="p">(</span><span class="n">paper</span><span class="p">)</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>        <span class="n">papers</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>            <span class="s1">&#39;features&#39;</span><span class="p">:</span> <span class="n">early_signals</span><span class="p">,</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>            <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">current_citations</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>        <span class="p">})</span>
+</code></pre></div>
+<h3 id="feature-engineering">Feature Engineering</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">features</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="c1"># Author features (strongest predictors)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="s1">&#39;author_max_h_index&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="s1">&#39;author_total_citations&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="s1">&#39;author_avg_citations_per_paper&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="s1">&#39;has_top_20_institution&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="s1">&#39;has_industry_author&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="c1"># Social signals (good early indicators)</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="s1">&#39;twitter_mentions_24h&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="s1">&#39;twitter_mentions_7d&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    <span class="s1">&#39;twitter_unique_users&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    <span class="s1">&#39;github_implementations_7d&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="s1">&#39;github_total_stars_7d&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    <span class="s1">&#39;reddit_score_max&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>    <span class="s1">&#39;mendeley_readers_7d&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    <span class="c1"># Content features</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    <span class="s1">&#39;abstract_length&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    <span class="s1">&#39;title_length&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>    <span class="s1">&#39;num_authors&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>    <span class="s1">&#39;has_code_mention&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>    <span class="s1">&#39;claims_sota&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>    <span class="s1">&#39;claims_novel&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>    <span class="s1">&#39;mentions_dataset&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>    <span class="c1"># Topic features</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>    <span class="s1">&#39;topic_growth_rate_6m&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>    <span class="s1">&#39;topic_paper_count_yearly&#39;</span><span class="p">,</span>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>    <span class="s1">&#39;is_emerging_topic&#39;</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="p">]</span>
+</code></pre></div>
+<h3 id="model-architecture">Model Architecture</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Ensemble approach for robustness</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="s1">&#39;rf&#39;</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">(</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        <span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        <span class="n">max_depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">10</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="p">),</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="s1">&#39;xgb&#39;</span><span class="p">:</span> <span class="n">XGBRegressor</span><span class="p">(</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        <span class="n">n_estimators</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>        <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        <span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span>  
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="p">),</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="s1">&#39;nn&#39;</span><span class="p">:</span> <span class="n">Sequential</span><span class="p">([</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>        <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>        <span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>        <span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>        <span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>        <span class="n">Dense</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>        <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>    <span class="p">])</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="p">}</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="c1"># Weighted ensemble</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="n">predictions</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>    <span class="mf">0.4</span> <span class="o">*</span> <span class="n">models</span><span class="p">[</span><span class="s1">&#39;rf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>    <span class="mf">0.4</span> <span class="o">*</span> <span class="n">models</span><span class="p">[</span><span class="s1">&#39;xgb&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>    <span class="mf">0.2</span> <span class="o">*</span> <span class="n">models</span><span class="p">[</span><span class="s1">&#39;nn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="p">)</span>
+</code></pre></div>
+<h2 id="zaawansowane-funkcjonalnosci-oracle">Zaawansowane Funkcjonalności Oracle</h2>
+<h3 id="1-prediction-confidence-calibration">1. Prediction Confidence Calibration</h3>
+<p>Nie wszystkie predykcje są równe. System oblicza confidence based on:
+- Siła sygnałów (czy wszystkie wskazują w tym samym kierunku?)
+- Podobieństwo do papers w training set
+- Model agreement (czy wszystkie modele się zgadzają?)
+- Historical accuracy dla podobnych papers</p>
+<h3 id="2-breakthrough-detection">2. Breakthrough Detection</h3>
+<p>Specjalny model do wykrywania potential breakthroughs:
+- Papers które będą w top 1% cytowań
+- Wykorzystuje dodatkowe features jak "paradigm shift language"
+- Osobny threshold i komunikacja</p>
+<h3 id="3-field-specific-models">3. Field-Specific Models</h3>
+<p>Różne dziedziny = różne wzorce cytowań:
+- Computer Vision: szybkie cytowania, GitHub crucial
+- NLP: Twitter bardzo ważny, corporate authors
+- Theory: wolniejsze cytowania, author prestige key
+- Applied AI: implementation speed matters most</p>
+<h3 id="4-explanation-generation">4. Explanation Generation</h3>
+<p>Dla każdej predykcji generujemy wyjaśnienie:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&quot;We predict high impact because:
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>1. Lead author has h-index 45 and previous breakthrough
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>2. 3 GitHub implementations in first 48h (rare signal)
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>3. Karpathy tweeted &#39;interesting approach&#39;
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>4. Solves known problem in transformer efficiency&quot;
+</code></pre></div></p>
+<h2 id="roi-i-metryki-sukcesu-oracle-edition">ROI i Metryki Sukcesu - Oracle Edition</h2>
+<h3 id="metryki-predykcji-cel-w-6-miesiecy">Metryki Predykcji (Cel w 6 miesięcy)</h3>
+<p><strong>Model Performance</strong>:
+- Accuracy within 20%: 70%+ ✅
+- Accuracy within 50%: 85%+ ✅
+- Breakthrough detection: 60%+ precision
+- False positive rate: &lt;15%</p>
+<p><strong>Oracle Operations</strong>:
+- Papers analyzed: 10,000+
+- Predictions made: 500+
+- Validated predictions: 50+ (po roku)
+- Model versions shipped: 5+</p>
+<p><strong>Business Metrics</strong>:
+- Newsletter subscribers: 5,000
+- API beta users: 20
+- Website MAU: 10,000
+- Media mentions: 10+</p>
+<p><strong>Fejm Metrics</strong>:
+- "Oracle was right!" moments: 5+
+- Viral prediction threads: 10+
+- Researchers citing us: 20+
+- "How did they know?" articles: 3+</p>
+<h3 id="koszty-miesieczne-oracle-setup">Koszty Miesięczne - Oracle Setup</h3>
+<p><strong>Make.com Operations</strong>:
+- ~100,000 operations/month (więcej API calls)
+- Plan: Teams ($29/month)</p>
+<p><strong>API Costs</strong>:
+- Twitter API Basic: $100/month (essential!)
+- Semantic Scholar: Free
+- GitHub API: Free tier sufficient
+- Altmetric: $50/month (optional)
+- ML API hosting: $20-50/month</p>
+<p><strong>Infrastructure</strong>:
+- Database: Airtable → PostgreSQL ($20/month)
+- ML training: Google Colab Pro ($10/month)
+- Website hosting: Vercel ($20/month)</p>
+<p><strong>Total: ~$250/month</strong></p>
+<h3 id="roi-calculation">ROI Calculation</h3>
+<p><strong>Assuming</strong>:
+- 5,000 newsletter subs × $10 value = $50,000
+- 20 API users × $99/month = $1,980/month
+- 2 enterprise clients × $499/month = $998/month
+- Speaking engagements from fame = $10,000</p>
+<p><strong>6-month revenue potential</strong>: $70,000+
+<strong>6-month costs</strong>: $1,500
+<strong>ROI</strong>: 4,567% 🚀</p>
+<h2 id="skalowanie-oracle">Skalowanie Oracle</h2>
+<h3 id="faza-1-miesiace-1-3-proof-of-concept">Faza 1 (Miesiące 1-3): Proof of Concept</h3>
+<ul>
+<li>Basic predictions dla CS.AI only</li>
+<li>Manual model updates</li>
+<li>50-100 predictions</li>
+<li>Focus on accuracy</li>
+</ul>
+<h3 id="faza-2-miesiace-4-6-growth">Faza 2 (Miesiące 4-6): Growth</h3>
+<ul>
+<li>Expand to all CS categories</li>
+<li>Automated retraining</li>
+<li>API beta launch</li>
+<li>Media push</li>
+</ul>
+<h3 id="faza-3-miesiace-7-12-scale">Faza 3 (Miesiące 7-12): Scale</h3>
+<ul>
+<li>All STEM fields</li>
+<li>Real-time predictions</li>
+<li>Enterprise features</li>
+<li>Acquisition talks</li>
+</ul>
+<h3 id="faza-4-rok-2-platform">Faza 4 (Rok 2+): Platform</h3>
+<ul>
+<li>Oracle-as-a-Service</li>
+<li>Custom models dla institutions</li>
+<li>Integration z Google Scholar</li>
+<li>IPO? 😄</li>
+</ul>
+<h2 id="troubleshooting-oracle">Troubleshooting Oracle</h2>
+<h3 id="problem-low-prediction-accuracy">Problem: Low prediction accuracy</h3>
+<p><strong>Solutions</strong>: 
+- More training data
+- Feature engineering
+- Field-specific models
+- Ensemble methods</p>
+<h3 id="problem-gaming-the-system">Problem: Gaming the system</h3>
+<p><strong>Solutions</strong>:
+- Anomaly detection
+- Rate limiting
+- Manual review for outliers
+- Transparent methodology</p>
+<h3 id="problem-api-costs-too-high">Problem: API costs too high</h3>
+<p><strong>Solutions</strong>:
+- Cache everything
+- Batch processing
+- Tiered checking (high score only)
+- Free alternatives</p>
+<h3 id="problem-no-early-signals">Problem: No early signals</h3>
+<p><strong>Solutions</strong>:
+- Wait 48h before scoring
+- Use author history more
+- Predict "unknown potential"
+- Clear communication</p>
+<h2 id="success-stories-future">Success Stories (Future)</h2>
+<h3 id="we-called-gpt-4s-impact">"We called GPT-4's impact"</h3>
+<p>"In March 2023, our Oracle gave the 'Sparks of AGI' paper a 95/100 score and predicted top 1% impact. Today it has 2,400+ citations."</p>
+<h3 id="found-the-needle-in-haystack">"Found the needle in haystack"</h3>
+<p>"Oracle spotted 'FlashAttention' with only 12 tweets. Now it's revolutionizing LLM efficiency with 1,200+ citations."</p>
+<h3 id="vcs-use-our-predictions">"VCs use our predictions"</h3>
+<p>"Sequoia Capital: 'We check Oracle scores before investing in AI startups building on new research.'"</p>
+<h2 id="quick-start-checklist-oracle-launch">Quick Start Checklist - Oracle Launch</h2>
+<h3 id="technical-week-1">Technical (Week 1):</h3>
+<ul>
+<li>[ ] Historical data collection (2018-2022 papers)</li>
+<li>[ ] Train first ML model</li>
+<li>[ ] Deploy prediction API</li>
+<li>[ ] Early signals collector live</li>
+<li>[ ] Basic tracker website</li>
+</ul>
+<h3 id="content-week-2">Content (Week 2):</h3>
+<ul>
+<li>[ ] 20 predictions ready</li>
+<li>[ ] Methodology blog post</li>
+<li>[ ] Launch announcement</li>
+<li>[ ] Press kit</li>
+<li>[ ] Video explainer</li>
+</ul>
+<h3 id="growth-week-3-4">Growth (Week 3-4):</h3>
+<ul>
+<li>[ ] Product Hunt launch</li>
+<li>[ ] Reach out to journalists</li>
+<li>[ ] Academic Twitter campaign</li>
+<li>[ ] Newsletter launch</li>
+<li>[ ] API beta opened</li>
+</ul>
+<h3 id="validation-month-2">Validation (Month 2+):</h3>
+<ul>
+<li>[ ] First accuracy report</li>
+<li>[ ] Model v2 with improvements</li>
+<li>[ ] Community challenges</li>
+<li>[ ] Partnership discussions</li>
+<li>[ ] Series A prep 😉</li>
+</ul>
+<hr />
+<p><em>AI Research Oracle to nie tylko narzędzie - to nowa kategoria w ocenie badań naukowych. Zamiast czekać lata na cytowania, przewidujemy przyszłość od pierwszego tygodnia. To generuje wartość, fejm i przewagę konkurencyjną.</em></p>
+<p><strong>🔮 "We don't wait for impact. We predict it."</strong></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hretheum/ai_oracle" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/AIResearchOracle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
