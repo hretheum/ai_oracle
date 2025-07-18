@@ -8,6 +8,31 @@ AI Research Oracle is a planned machine learning system that aims to predict whi
 
 📖 **English** (current) | [📖 **Polski**](https://github.com/hretheum/ai_oracle/tree/main/docs-pl) | [📚 **Documentation**](https://hretheum.github.io/ai_oracle/)
 
+## 📋 Table of Contents
+
+- [🌐 Language / Język](#-language--język)
+- [📋 Table of Contents](#-table-of-contents)
+- [🔗 Quick Access](#-quick-access)
+- [Current Reality](#current-reality)
+- [The Problem We're Solving](#the-problem-were-solving)
+- [Proposed Solution](#proposed-solution)
+- [Technical Approach](#technical-approach-planned)
+- [Business Model](#business-model-hypothesis)
+- [Development Roadmap](#development-roadmap)
+- [Budget Reality](#budget-reality)
+- [Honest Risks](#honest-risks)
+- [How to Contribute](#how-to-contribute)
+- [Contact](#contact)
+
+## 🔗 Quick Access
+
+- 📚 **[Live Documentation](https://hretheum.github.io/ai_oracle/)** - Complete project documentation
+- 🗺️ **[Development Roadmap](https://hretheum.github.io/ai_oracle/operations/roadmap/)** - Timeline & phases
+- 💰 **[Business Plan](https://hretheum.github.io/ai_oracle/strategy/business-plan/)** - Complete strategy
+- 🔧 **[Implementation Guide](https://hretheum.github.io/ai_oracle/technical/implementation-guide/)** - How to build it
+- 📊 **[Pitch Deck](https://hretheum.github.io/ai_oracle/GAMMA_PITCH_DECK_PROMPT/)** - Investor presentation
+- 🌐 **[Polish Version](https://github.com/hretheum/ai_oracle/tree/main/docs-pl)** - Dokumentacja po polsku
+
 ## Current Reality
 
 - **Development Stage**: Pre-MVP, architecture design phase
