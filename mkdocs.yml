@@ -39,6 +39,7 @@ plugins:
         - locale: en
           name: English
           build: true
+          default: true
         - locale: pl
           name: Polski
           build: true
