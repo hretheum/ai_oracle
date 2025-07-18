@@ -1,7 +1,7 @@
 site_name: AI Research Oracle
 site_description: Predicting AI paper impact using early signals
 site_author: AI Research Oracle Team
-site_url: https://yourusername.github.io/ai-research-oracle
+site_url: https://hretheum.github.io/ai_oracle
 
 theme:
   name: material
@@ -33,6 +33,36 @@ plugins:
   - awesome-pages
   - git-revision-date-localized:
       enable_creation_date: true
+  - i18n:
+      default_language: en
+      languages:
+        en:
+          name: English
+          build: true
+        pl:
+          name: Polski
+          build: true
+          site_name: AI Research Oracle
+      nav_translations:
+        pl:
+          Home: Strona główna
+          Strategy: Strategia
+          Business Plan: Plan biznesowy
+          Pivot Story: Historia pivotu
+          Technical: Dokumentacja techniczna
+          Implementation: Implementacja
+          API Reference: Dokumentacja API
+          Algorithms: Algorytmy
+          ML Training: Trening ML
+          Operations: Operacje
+          Roadmap: Mapa drogowa
+          Metrics: Metryki
+          Budget: Budżet
+          Newsletter: Newsletter
+          Resources: Zasoby
+          Case Studies: Studia przypadków
+          Platforms: Platformy
+          Pitch Deck: Pitch Deck
 
 nav:
   - Home: index.md
@@ -57,7 +87,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername/ai-research-oracle
+      link: https://github.com/hretheum/ai_oracle
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/AIResearchOracle
 
