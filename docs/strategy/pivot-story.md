@@ -1,3 +1,6 @@
+# AI Research Oracle - Pivot Story
+
+## Summary
 # 🔄 PIVOT SUMMARY: From Research Showcase to Research Oracle
 
 ## Executive Summary of Changes

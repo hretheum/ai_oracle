@@ -1,112 +1,108 @@
 # AI Research Oracle
 
-**AI Research Oracle** predicts which AI papers will become influential before they accumulate citations. Using machine learning to analyze early signals from the first week after publication—author metrics, social buzz, GitHub implementations, and topic momentum—we forecast future impact with 73% accuracy (validated on 2,500+ papers from 2021-2022, predicting top 20% by citation count). While traditional metrics require waiting 1-3 years for citations to accumulate, Oracle delivers predictions within 7 days, enabling researchers, VCs, and companies to identify breakthrough research as it emerges.
+**Status: Concept/Early Development**
 
-## Project History
+AI Research Oracle is a planned machine learning system that aims to predict which AI papers will become influential before they accumulate citations. The concept is to analyze early signals from the first week after publication—author metrics, social buzz, GitHub implementations, and topic momentum—to forecast future impact.
 
-Started as a simple AI paper curation tool, we quickly discovered the fundamental problem: papers need years to accumulate citations, making real-time curation impossible. This insight led to our pivot from retrospective curation to predictive analytics. Now, instead of waiting for impact to materialize, we predict it using early indicators that correlate with long-term influence.
+## Current Reality
 
-## Quick Start
+- **Development Stage**: Pre-MVP, architecture design phase
+- **Code Written**: ~0% (planning stage)
+- **Users**: 0
+- **Revenue**: $0
+- **Team**: 1-2 people (part-time)
 
-```bash
-# Clone repository
-git clone https://github.com/yourusername/ai-research-oracle.git
-cd ai-research-oracle
+## The Problem We're Solving
 
-# Set up environment
-cp .env.example .env
-# Add your API keys to .env
+- 2,000+ AI papers published daily on ArXiv
+- Researchers need 1-3 years to see which papers accumulate citations
+- By then, competitive advantage from early adoption is lost
+- Current curation tools can only look backward, not forward
 
-# Install dependencies
-pip install -r requirements.txt
+## Proposed Solution
 
-# Run data collection
-python scripts/collect_signals.py
+Build an ML system that:
+1. Collects early signals (first 7 days after publication)
+2. Predicts which papers will be in top 20% by citations after 2 years
+3. Tracks predictions publicly to build trust
+4. Learns from outcomes to improve accuracy
 
-# Generate predictions
-python scripts/generate_predictions.py
+## Technical Approach (Planned)
 
-# Launch web tracker
-python app.py
-```
+### Early Signals to Track:
+- Author h-index and institutional affiliation
+- GitHub repos created within 72 hours
+- Twitter/Reddit discussion volume
+- Technical novelty indicators
 
-## Core Features
+### Target Metrics:
+- Prediction accuracy: 70%+ (to be validated)
+- Papers to analyze: 10,000+ for training
+- Latency: <10 minutes from publication
 
-- **Early Signals Score (0-100)**: Weighted algorithm (40% author metrics, 35% code implementations, 20% social signals, 5% novelty) validated against 2021-2022 data
-- **ML Prediction Engine**: Gradient boosting model (XGBoost) trained on 12,847 papers, predicting top 20% by future citations
-- **Public Accuracy Tracker**: Live dashboard showing all predictions with confidence intervals and actual outcomes after 12 months
-- **Bias Mitigation**: Separate models for emerging vs established researchers to reduce Matthew effect
-- **API Access**: RESTful API with 99.2% uptime, avg response time 180ms
+## Business Model (Hypothesis)
 
-## Tech Stack
+1. **Free Tier**: Weekly newsletter with top 5 predictions
+2. **Researcher Tier**: $19/month for API access
+3. **Team/Lab Tier**: $199/month for bulk access
+4. **Enterprise**: Custom pricing for white-label
 
-- **Data Collection**: Make.com, ArXiv API, Twitter API, GitHub API
-- **ML Pipeline**: Python, scikit-learn, TensorFlow
-- **Database**: Airtable (MVP), PostgreSQL (production)
-- **API**: FastAPI, Redis cache
-- **Newsletter**: Beehiiv
-- **Monitoring**: Grafana, custom accuracy tracker
+**Assumptions to Validate:**
+- Researchers will pay for time-saving tools
+- 70% accuracy is achievable and valuable
+- Early signals actually correlate with long-term impact
 
-## Business Model
+## Development Roadmap
 
-1. **Free Tier**: 10 predictions/month, weekly newsletter
-2. **Researcher ($19/month)**: Unlimited predictions, API access, alerts
-3. **Lab/Team ($199/month)**: 5 seats, priority support, bulk exports
-4. **Enterprise**: Custom models, white-label, SLA (from $2k/month)
+### Phase 0 (Current): Foundation
+- [ ] Set up data collection infrastructure
+- [ ] Create database schema
+- [ ] Collect first 1,000 papers with metadata
 
-**Unit Economics**: CAC $12, LTV $342, Payback 2.1 months
+### Phase 1: Data Collection
+- [ ] Build automated pipeline for ArXiv + social signals
+- [ ] Gather historical data (2020-2022) for training
+- [ ] Validate that signals exist and are collectible
 
-## Current Status
+### Phase 2: ML Development
+- [ ] Train first model (even if only 60% accurate)
+- [ ] Build evaluation framework
+- [ ] Test on historical data
 
-- ✅ Phase 0-2 Complete: Infrastructure, data pipeline, ML model v1
-- 🚧 Phase 3: MVP launch with 500 beta users
-- 📅 Next: Growth automation and model optimization
+### Phase 3: MVP Launch
+- [ ] Make first 10 public predictions
+- [ ] Launch basic newsletter
+- [ ] Get first 100 beta users
 
-## Success Metrics
+## Budget Reality
 
-**Current Status** (Month 3):
-- **Technical**: 73% accuracy (target: 70%), 8min latency, 99.2% uptime
-- **Business**: 487 subscribers (target: 5,000), 2 API pilots, 3 media mentions
-- **Validation**: 2,500+ historical papers analyzed, 89% positive user feedback
+**Estimated Monthly Costs (when operational):**
+- Data APIs: ~$150 (Twitter, etc.)
+- Infrastructure: ~$50 (hosting, compute)
+- Tools: ~$50 (Make.com, Airtable)
+- **Total: ~$250/month**
 
-**6-Month Targets**:
-- 75% prediction accuracy with confidence intervals
-- 5,000 newsletter subscribers 
-- 20 paying API customers ($9,800 MRR)
-- Cost per prediction: <$0.02
+## Honest Risks
 
-## Methodology & Validation
+1. **Technical Risk**: Maybe early signals don't predict impact
+2. **Market Risk**: Researchers might not care enough to pay
+3. **Competition Risk**: Google Scholar could add this feature
+4. **Execution Risk**: Building accurate ML is hard
 
-**Definition of "Influential"**: Papers in top 20% of citations within their subfield after 24 months
+## How to Contribute
 
-**Baseline Comparison**: 
-- Random selection: 20% accuracy
-- h-index only: 51% accuracy
-- Our model: 73% accuracy
-
-**Validation Set**: 2,500 papers from 2021-2022 with known outcomes
-
-## Documentation
-
-- [Master Plan](docs/MASTER_PLAN.md) - Complete business strategy
-- [Implementation Guide](docs/IMPLEMENTATION_GUIDE.md) - Technical setup
-- [API Documentation](docs/API_INTEGRATION_SPECS.md) - Integration specs
-- [Roadmap](docs/roadmap/ROADMAP_MASTER.md) - Development phases
-
-## Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-MIT License - see [LICENSE](LICENSE) for details.
+We're in early stages and welcome:
+- Feedback on the concept
+- Introductions to AI researchers
+- Technical expertise in ML/NLP
+- Historical citation data for validation
 
 ## Contact
 
-- Email: oracle@yourcompany.com
-- Twitter: [@AIResearchOracle](https://twitter.com/AIResearchOracle)
-- Newsletter: [oracle.substack.com](https://oracle.substack.com)
+- Email: [your-email]
+- GitHub: [this-repo]
+- Status Updates: [blog/twitter]
 
 ---
 
-*"We don't wait for impact. We predict it."* 🔮
+*"We're building something that might predict research impact. Emphasis on might. Join us in finding out if it works."*

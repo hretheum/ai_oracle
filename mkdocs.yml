@@ -1,0 +1,74 @@
+site_name: AI Research Oracle
+site_description: Predicting AI paper impact using early signals
+site_author: AI Research Oracle Team
+site_url: https://yourusername.github.io/ai-research-oracle
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - awesome-pages
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+nav:
+  - Home: index.md
+  - Strategy:
+    - Business Plan: strategy/business-plan.md
+    - Pivot Story: strategy/pivot-story.md
+  - Technical:
+    - Implementation: technical/implementation-guide.md
+    - API Reference: technical/api-reference.md
+    - Algorithms: technical/algorithms.md
+    - ML Training: technical/ml-training-guide.md
+  - Operations:
+    - Roadmap: operations/roadmap.md
+    - Metrics: operations/metrics.md
+    - Budget: operations/budget.md
+    - Newsletter: operations/newsletter-strategy.md
+  - Resources:
+    - Case Studies: resources/case-study-example.md
+    - Platforms: resources/platform_comparison.md
+    - Pitch Deck: GAMMA_PITCH_DECK_PROMPT.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/ai-research-oracle
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/AIResearchOracle
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
