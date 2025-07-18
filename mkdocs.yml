@@ -33,37 +33,6 @@ plugins:
   - awesome-pages
   - git-revision-date-localized:
       enable_creation_date: true
-  - i18n:
-      default_language: en
-      languages:
-        - locale: en
-          name: English
-          build: true
-          default: true
-        - locale: pl
-          name: Polski
-          build: true
-          site_name: AI Research Oracle
-      nav_translations:
-        pl:
-          Home: Strona główna
-          Strategy: Strategia
-          Business Plan: Plan biznesowy
-          Pivot Story: Historia pivotu
-          Technical: Dokumentacja techniczna
-          Implementation: Implementacja
-          API Reference: Dokumentacja API
-          Algorithms: Algorytmy
-          ML Training: Trening ML
-          Operations: Operacje
-          Roadmap: Mapa drogowa
-          Metrics: Metryki
-          Budget: Budżet
-          Newsletter: Newsletter
-          Resources: Zasoby
-          Case Studies: Studia przypadków
-          Platforms: Platformy
-          Pitch Deck: Pitch Deck
 
 nav:
   - Home: index.md
@@ -91,6 +60,13 @@ extra:
       link: https://github.com/hretheum/ai_oracle
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/AIResearchOracle
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Polski
+      link: /pl/
+      lang: pl
 
 markdown_extensions:
   - pymdownx.highlight:
