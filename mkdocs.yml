@@ -36,10 +36,10 @@ plugins:
   - i18n:
       default_language: en
       languages:
-        en:
+        - locale: en
           name: English
           build: true
-        pl:
+        - locale: pl
           name: Polski
           build: true
           site_name: AI Research Oracle
