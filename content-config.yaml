@@ -1,0 +1,152 @@
+# Content Pipeline Configuration
+# Ten plik definiuje zasady publikacji dla różnych platform
+
+content_pipeline:
+  version: "1.0"
+  
+  platforms:
+    beehiiv:
+      schedule: 
+        frequency: "weekly"
+        day: "thursday"
+        time: "10:00"
+        timezone: "Europe/Warsaw"
+      format:
+        type: "long-form"
+        min_words: 800
+        max_words: 2500
+        style: "vectorwave" # odniesienie do stylebook
+      sections:
+        - title
+        - tldr
+        - main_content
+        - key_takeaways
+        - call_to_action
+      automation:
+        make_scenario_id: "beehiiv-publisher"
+        triggers:
+          - new_file_in_folder
+          - manual_publish
+      analytics:
+        track_opens: true
+        track_clicks: true
+        utm_source: "newsletter"    
+    linkedin:
+      schedule:
+        frequency: "3x_per_week"
+        days: ["monday", "wednesday", "friday"]
+        time: "09:00"
+        timezone: "Europe/Warsaw"
+      format:
+        type: "short-form"
+        max_words: 500
+        max_hashtags: 5
+        style: "professional-casual"
+      post_types:
+        - thought_leadership
+        - case_study
+        - tool_review
+        - industry_news
+      automation:
+        make_scenario_id: "linkedin-publisher"
+        ab_testing:
+          enabled: true
+          variants: 3
+          test_duration_hours: 2
+      engagement:
+        auto_reply_to_comments: false
+        track_reshares: true
+    
+    twitter:
+      schedule:
+        frequency: "daily"
+        times: ["08:00", "13:00", "18:00"]
+        timezone: "Europe/Warsaw"      format:
+        type: "thread"
+        max_tweets_per_thread: 8
+        max_chars_per_tweet: 280
+        style: "concise-technical"
+      content_mix:
+        original: 60
+        curated: 30
+        replies: 10
+      automation:
+        make_scenario_id: "twitter-thread-publisher"
+        auto_thread_from_blog: true
+        
+  content_sources:
+    ai_research:
+      folder: "content/research/"
+      process:
+        - extract_key_findings
+        - generate_summary
+        - create_visual
+        - adapt_per_platform
+    
+    blog_posts:
+      folder: "content/blog/"
+      process:
+        - extract_snippets
+        - create_social_versions
+        - generate_newsletter_teaser
+    
+    case_studies:
+      folder: "content/case-studies/"
+      process:
+        - extract_metrics
+        - create_linkedin_story
+        - design_infographic
+  lead_magnets:
+    ai_prompts_collection:
+      trigger: "newsletter_signup"
+      delivery: "instant"
+      format: "pdf"
+      
+    weekly_ai_digest:
+      trigger: "premium_signup"
+      delivery: "weekly"
+      format: "email"
+
+  analytics_tracking:
+    kpis:
+      - subscriber_growth
+      - open_rate
+      - click_rate
+      - conversion_rate
+      - social_engagement
+    
+    reports:
+      weekly:
+        recipients: ["admin@example.com"]
+        include:
+          - top_performing_content
+          - subscriber_growth
+          - engagement_trends
+      
+      monthly:
+        recipients: ["team@example.com"]
+        include:
+          - full_analytics
+          - roi_analysis
+          - content_calendar_performance
+
+  quality_checks:
+    pre_publish:
+      - spell_check
+      - link_validation
+      - image_optimization
+      - seo_check
+    
+    post_publish:
+      - delivery_confirmation
+      - rendering_check
+      - engagement_monitoring
+
+  templates:
+    location: "content/templates/"
+    types:
+      - newsletter_standard
+      - newsletter_special
+      - linkedin_post
+      - twitter_thread
+      - case_study

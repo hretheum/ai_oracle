@@ -1,0 +1,91 @@
+{
+  "scenario_name": "Daily Research Crawler - AI Papers",
+  "trigger": {
+    "type": "Schedule",
+    "time": "06:00 UTC",
+    "frequency": "Daily"
+  },
+  "modules": [
+    {
+      "id": 1,
+      "type": "HTTP Request",
+      "name": "Fetch ArXiv Papers",
+      "config": {
+        "url": "http://export.arxiv.org/api/query",
+        "method": "GET",
+        "params": {
+          "search_query": "cat:cs.AI OR cat:cs.LG OR cat:cs.CL",
+          "start": "0",
+          "max_results": "50",
+          "sortBy": "submittedDate",
+          "sortOrder": "descending"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "type": "XML Parser",
+      "name": "Parse ArXiv Response",
+      "input": "module_1.data"
+    },
+    {
+      "id": 3,
+      "type": "Iterator",
+      "name": "Process Each Paper",
+      "array": "module_2.entry[]"
+    },
+    {
+      "id": 4,
+      "type": "Text Parser",
+      "name": "Extract ArXiv ID",
+      "pattern": "arxiv\\.org/abs/(.+)$"
+    },
+    {
+      "id": 5,
+      "type": "HTTP Request",
+      "name": "Get Citations from Semantic Scholar",
+      "config": {
+        "url": "https://api.semanticscholar.org/v1/paper/arXiv:{{arxiv_id}}",
+        "headers": {
+          "x-api-key": "YOUR_API_KEY_HERE"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "type": "Airtable Create",
+      "name": "Save Paper to Database",
+      "fields": {
+        "title": "{{iterator.title}}",
+        "authors": "{{join(iterator.author[].name, ', ')}}",
+        "abstract": "{{iterator.summary}}",
+        "arxiv_id": "{{text_parser.match[1]}}",
+        "pdf_url": "{{iterator.link.href}}",
+        "submitted_date": "{{iterator.published}}",
+        "citation_count": "{{semantic_scholar.citationCount}}"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Set Variable",
+      "name": "Calculate Relevance Score",
+      "formula": "10 + citations_bonus + author_bonus + keyword_bonus"
+    }
+  ],
+  "error_handling": [
+    {
+      "module": 1,
+      "handler": "Resume"
+    },
+    {
+      "module": 5,
+      "handler": "Resume"
+    }
+  ],
+  "notes": [
+    "Remember to get Semantic Scholar API key from https://www.semanticscholar.org/product/api",
+    "ArXiv has rate limit of 1 request per 3 seconds",
+    "Consider adding delay between iterations if hitting rate limits",
+    "Monitor Airtable record limits on free plan"
+  ]
+}
