@@ -1,0 +1,55 @@
+# Environment variables
+.env
+.env.*
+*.env
+**/.env
+**/*.env
+
+# Recursively ignore all .env files in any subdirectory
+**/.env
+**/.env.*
+**/env/
+**/*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+VENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation build
+site/
+.cache/
+mkdocs-material/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Secrets and credentials
+*.pem
+*.key
+*.cert
+secrets/
+credentials/
+config/secrets/
