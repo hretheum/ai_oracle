@@ -1,24 +1,24 @@
 site_name: AI Research Oracle
-site_description: Predicting AI paper impact using early signals
-site_author: AI Research Oracle Team
-site_url: https://hretheum.github.io/ai_oracle
+site_description: Przewidywanie wpływu publikacji AI za pomocą wczesnych sygnałów
+site_author: Zespół AI Research Oracle
+site_url: https://hretheum.github.io/ai_oracle/pl/
 
 theme:
   name: material
-  language: en
+  language: pl
   palette:
     - scheme: default
       primary: indigo
       accent: orange
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Przełącz na tryb ciemny
     - scheme: slate
       primary: indigo
       accent: orange
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Przełącz na tryb jasny
   features:
     - navigation.tabs
     - navigation.sections
@@ -34,25 +34,27 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
 
+docs_dir: docs-pl
+
 nav:
-  - Home: index.md
-  - 🌐 Polski: https://hretheum.github.io/ai_oracle/pl/
-  - Strategy:
-    - Business Plan: strategy/business-plan.md
-    - Pivot Story: strategy/pivot-story.md
-  - Technical:
-    - Implementation: technical/implementation-guide.md
-    - API Reference: technical/api-reference.md
-    - Algorithms: technical/algorithms.md
-    - ML Training: technical/ml-training-guide.md
-  - Operations:
-    - Roadmap: operations/roadmap.md
-    - Metrics: operations/metrics.md
-    - Budget: operations/budget.md
+  - Strona główna: index.md
+  - 🌐 English: https://hretheum.github.io/ai_oracle/
+  - Strategia:
+    - Plan biznesowy: strategy/business-plan.md
+    - Historia pivotu: strategy/pivot-story.md
+  - Dokumentacja techniczna:
+    - Implementacja: technical/implementation-guide.md
+    - Dokumentacja API: technical/api-reference.md
+    - Algorytmy: technical/algorithms.md
+    - Trening ML: technical/ml-training-guide.md
+  - Operacje:
+    - Mapa drogowa: operations/roadmap.md
+    - Metryki: operations/metrics.md
+    - Budżet: operations/budget.md
     - Newsletter: operations/newsletter-strategy.md
-  - Resources:
-    - Case Studies: resources/case-study-example.md
-    - Platforms: resources/platform_comparison.md
+  - Zasoby:
+    - Studia przypadków: resources/case-study-example.md
+    - Platformy: resources/platform_comparison.md
     - Pitch Deck: GAMMA_PITCH_DECK_PROMPT.md
 
 extra:

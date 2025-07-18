@@ -1,6 +1,6 @@
 # AI Research Oracle - Development Roadmap
 
-📖 [English](https://hretheum.github.io/ai_oracle/) | [📖 Polski](https://github.com/hretheum/ai_oracle/tree/main/docs-pl) | [🏠 Repository](https://github.com/hretheum/ai_oracle) | [📚 Documentation](https://hretheum.github.io/ai_oracle/)
+📖 [English](https://hretheum.github.io/ai_oracle/) | [📖 Polski](https://hretheum.github.io/ai_oracle/pl/) | [🏠 Repository](https://github.com/hretheum/ai_oracle) | [📚 Documentation](https://hretheum.github.io/ai_oracle/)
 
 ## Timeline: July 2025 - December 2025
 

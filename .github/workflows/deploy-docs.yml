@@ -31,8 +31,11 @@ jobs:
         run: |
           pip install -r requirements-docs.txt
           
-      - name: Build documentation
-        run: mkdocs build
+      - name: Build English documentation
+        run: mkdocs build -f mkdocs.yml
+        
+      - name: Build Polish documentation
+        run: mkdocs build -f mkdocs-pl.yml -d site/pl
         
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force

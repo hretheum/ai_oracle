@@ -6,7 +6,7 @@ AI Research Oracle is a planned machine learning system that aims to predict whi
 
 ## 🌐 Language / Język
 
-📖 **English** (current) | [📖 **Polski**](https://github.com/hretheum/ai_oracle/tree/main/docs-pl) | [📚 **Documentation**](https://hretheum.github.io/ai_oracle/)
+📖 **English** (current) | [📖 **Polski**](https://hretheum.github.io/ai_oracle/pl/) | [📚 **Documentation**](https://hretheum.github.io/ai_oracle/)
 
 ## 📋 Table of Contents
 
@@ -31,7 +31,7 @@ AI Research Oracle is a planned machine learning system that aims to predict whi
 - 💰 **[Business Plan](https://hretheum.github.io/ai_oracle/strategy/business-plan/)** - Complete strategy
 - 🔧 **[Implementation Guide](https://hretheum.github.io/ai_oracle/technical/implementation-guide/)** - How to build it
 - 📊 **[Pitch Deck](https://hretheum.github.io/ai_oracle/GAMMA_PITCH_DECK_PROMPT/)** - Investor presentation
-- 🌐 **[Polish Version](https://github.com/hretheum/ai_oracle/tree/main/docs-pl)** - Dokumentacja po polsku
+- 🌐 **[Polish Version](https://hretheum.github.io/ai_oracle/pl/)** - Dokumentacja po polsku
 
 ## Current Reality
 
@@ -135,7 +135,7 @@ We're in early stages and welcome:
 ## 🔗 Quick Links
 
 - 📚 **[Live Documentation](https://hretheum.github.io/ai_oracle/)** - Complete project documentation
-- 🌐 **[Polish Version](https://github.com/hretheum/ai_oracle/tree/main/docs-pl)** - Dokumentacja po polsku
+- 🌐 **[Polish Version](https://hretheum.github.io/ai_oracle/pl/)** - Dokumentacja po polsku
 - 📋 **[Roadmap](https://hretheum.github.io/ai_oracle/operations/roadmap/)** - Development timeline
 - 🎯 **[Business Plan](https://hretheum.github.io/ai_oracle/strategy/business-plan/)** - Complete strategy
 - 🔧 **[Implementation Guide](https://hretheum.github.io/ai_oracle/technical/implementation-guide/)** - How to build it

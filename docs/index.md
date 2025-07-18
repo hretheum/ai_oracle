@@ -4,7 +4,7 @@ Welcome to the AI Research Oracle documentation. This project aims to predict wh
 
 ## 🌐 Language / Język
 
-📖 **English** (current) | [📖 **Polski**](https://github.com/hretheum/ai_oracle/tree/main/docs-pl) | [🏠 **Main Repository**](https://github.com/hretheum/ai_oracle)
+📖 **English** (current) | [📖 **Polski**](https://hretheum.github.io/ai_oracle/pl/) | [🏠 **Main Repository**](https://github.com/hretheum/ai_oracle)
 
 ## Quick Navigation
 
