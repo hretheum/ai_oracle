@@ -2,6 +2,10 @@
 
 Witamy w dokumentacji AI Research Oracle. Ten projekt ma na celu przewidywanie, które artykuły badawcze z dziedziny AI staną się wpływowe, wykorzystując analizę uczenia maszynowego wczesnych sygnałów.
 
+## 🌐 Language / Język
+
+[📖 **English**](https://hretheum.github.io/ai_oracle/) | 📖 **Polski** (aktualnie) | [🏠 **Główne repozytorium**](https://github.com/hretheum/ai_oracle)
+
 ## Szybka nawigacja
 
 ### 📋 Dokumenty strategiczne

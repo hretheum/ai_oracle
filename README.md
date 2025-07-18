@@ -4,6 +4,10 @@
 
 AI Research Oracle is a planned machine learning system that aims to predict which AI papers will become influential before they accumulate citations. The concept is to analyze early signals from the first week after publication—author metrics, social buzz, GitHub implementations, and topic momentum—to forecast future impact.
 
+## 🌐 Language / Język
+
+📖 **English** (current) | [📖 **Polski**](https://github.com/hretheum/ai_oracle/tree/main/docs-pl) | [📚 **Documentation**](https://hretheum.github.io/ai_oracle/)
+
 ## Current Reality
 
 - **Development Stage**: Pre-MVP, architecture design phase
@@ -102,6 +106,14 @@ We're in early stages and welcome:
 - Email: [your-email]
 - GitHub: [this-repo]
 - Status Updates: [blog/twitter]
+
+## 🔗 Quick Links
+
+- 📚 **[Live Documentation](https://hretheum.github.io/ai_oracle/)** - Complete project documentation
+- 🌐 **[Polish Version](https://github.com/hretheum/ai_oracle/tree/main/docs-pl)** - Dokumentacja po polsku
+- 📋 **[Roadmap](https://hretheum.github.io/ai_oracle/operations/roadmap/)** - Development timeline
+- 🎯 **[Business Plan](https://hretheum.github.io/ai_oracle/strategy/business-plan/)** - Complete strategy
+- 🔧 **[Implementation Guide](https://hretheum.github.io/ai_oracle/technical/implementation-guide/)** - How to build it
 
 ---
 

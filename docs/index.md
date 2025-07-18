@@ -2,6 +2,10 @@
 
 Welcome to the AI Research Oracle documentation. This project aims to predict which AI research papers will become influential using machine learning analysis of early signals.
 
+## 🌐 Language / Język
+
+📖 **English** (current) | [📖 **Polski**](https://github.com/hretheum/ai_oracle/tree/main/docs-pl) | [🏠 **Main Repository**](https://github.com/hretheum/ai_oracle)
+
 ## Quick Navigation
 
 ### 📋 Strategic Documents

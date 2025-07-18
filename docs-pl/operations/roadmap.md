@@ -1,5 +1,7 @@
 # AI Research Oracle - Plan rozwoju
 
+[📖 English](https://hretheum.github.io/ai_oracle/) | 📖 **Polski** | [🏠 Repozytorium](https://github.com/hretheum/ai_oracle) | [📚 Dokumentacja](https://hretheum.github.io/ai_oracle/)
+
 ## Harmonogram: lipiec 2025 - grudzień 2025
 
 ### Faza 0: Fundament (19-21 lipca 2025)

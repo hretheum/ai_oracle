@@ -36,6 +36,7 @@ plugins:
 
 nav:
   - Home: index.md
+  - 🌐 Polski: https://github.com/hretheum/ai_oracle/tree/main/docs-pl
   - Strategy:
     - Business Plan: strategy/business-plan.md
     - Pivot Story: strategy/pivot-story.md
